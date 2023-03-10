@@ -1,0 +1,44 @@
+
+@font-face {
+    font-family: "EuclidReg";
+    src: local("EuclidReg"),
+     url(~/assets/fonts/EuclidReg.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "EuclidMd";
+    src: local("EuclidMd"),
+        url(~/assets/fonts/EuclidMd.ttf) format("truetype")
+  }
+@font-face {
+    font-family: "EuclidBold";
+    src: local("EuclidBold"),
+        url(~/assets/fonts/EuclidBold.ttf) format("truetype")
+  }
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: inherit;
+  }
+  
+  body{
+    font-family: "EuclidReg";
+  }
+  
+  button{
+    border: none;
+    background: none;
+    font-family: inherit;
+    cursor: pointer
+  }
+  
+  ul{
+    list-style: none;
+  }
+  
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
