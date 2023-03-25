@@ -70,7 +70,7 @@ export default {
       position: relative;
       overflow: hidden;
       @media(min-width: 768px){
-        width: 200px;
+        width: 45%;
       }
       @media(min-width: 992px){
         margin-right: 0;

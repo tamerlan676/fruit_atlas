@@ -25,6 +25,8 @@
       li
         nuxt-link(to="/delivery") Доставка
       li
+        nuxt-link(to="/articles") Cтатьи
+      li
         nuxt-link(to="/contacts") Контакты
   .mob-sm
     .cart(@click='$emit("turnCart")')

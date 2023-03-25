@@ -17,6 +17,10 @@
                 .text
                     img(src="~/assets/images/min-cart-btn.svg")
                     p В корзину
+            .icons-info 
+              .info-item(v-for="item in iconsInfo") 
+                img(:src="item.img")
+                .text(v-html="item.text") {{ item.text }}
             .counter(v-if="counter") 
               .counter-wrapper
                 .minus(@click="minusOne(getItem)") -
@@ -34,6 +38,28 @@
           return {
             id: this.$route.params.id,
             addedMessage: false,
+            iconsInfo: [
+            {
+              img: require("~/assets/images/baskets-icons/watch.svg"),
+              text: `<span>Доставка</span>: Привезем ваш заказ сегодня в течении 2-3 часов.`
+            },
+            {
+              img: require("~/assets/images/baskets-icons/gift.svg"),
+              text: `<span>Упаковка</span>: Мы тщательно упаковываем заказы, чтобы они доехали до вас в лучшем виде`
+            },
+            {
+              img: require("~/assets/images/baskets-icons/quality.svg"),
+              text: `<span>Гарантия качества</span>: Мы тчательно подбираем каждый продукт в вашу заказ. Выбираем самоее свежее`
+            },
+            {
+              img: require("~/assets/images/baskets-icons/photo.svg"),
+              text: `<span>Фотоконтроль</span>: По Вашему запросу отправим фото заказа перед доставой по WhatsApp или Telegram.`
+            },
+            {
+              img: require("~/assets/images/baskets-icons/dialog.svg"),
+              text: `<span>Остались вопросы?</span>: Оперативно ответим в чате или по телефону: <a href="tel:79188208097"><br>8 (918) 820-80-97</a>`
+            }
+          ],
             counter: false
           }
         },
@@ -197,6 +223,21 @@
                       height: 40px;
                       box-sizing: border-box;
                       cursor: pointer
+                    }
+                  }
+                  .icons-info{
+                    .info-item{
+                      display: flex;
+                      align-items: center;
+                      justify-content: flex-start;
+                      margin-bottom: 24px;
+                      @media(min-width: 992px){
+                        width: 400px;
+                      }
+                      img{
+                        margin-right: 20px;
+                        width: 30px;
+                      }
                     }
                   }
               }

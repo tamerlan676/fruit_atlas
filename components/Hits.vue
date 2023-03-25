@@ -40,7 +40,7 @@
       minusOne(product){
         this.$store.commit('minusOne', product)
           }, 
-        },
+        }
     }
 </script>
     
@@ -49,7 +49,7 @@
         display: flex;
         overflow: auto;
         padding: 0 16px;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
       @media(min-width: 768px){
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -59,7 +59,7 @@
       @media(min-width: 1200px){
         grid-template-columns: repeat(4, 1fr);
         width: 1120px;
-        margin: 0 auto 120px;
+        margin: 0 auto 40px;
       }
       .product{
         flex: 0 0 auto;
@@ -187,4 +187,13 @@
             display: none;
           }
     }
+    .root{
+    transform: scale(0);
+    opacity: 0;
+    transition: all .7s ease;
+    &.active{
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
     </style>

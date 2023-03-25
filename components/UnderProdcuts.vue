@@ -4,8 +4,8 @@
     .text Возможно товара просто нет на сайте, но мы обязательно найдем его на складе.
     .text Свяжитесь с нами:
     .buttons
-        a.whats(href="https://wa.me/79188208097" target="_blank") написать в WhatsApp 
-        a.tel(href="tel:79188208097") позвонить по телефону
+        a.whats(href="https://wa.me/79933645588" target="_blank") написать в WhatsApp 
+        a.tel(href="tel:+79933645588") позвонить по телефону
 </template>
 
 <script>

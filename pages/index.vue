@@ -5,9 +5,10 @@
   Scheme
   h2.hit-title Сезонные фрукты
   Hits(:hits="fruitsHits" category="fruits")
+  .all-links 
+    nuxt-link(to="categories/fruits") Смотреть все фрукты >
   BannerBonus
-  h2.hit-title Сезонные овощи
-  Hits(:hits="vegetablesHits" category="vegetables")
+  Articles(:articles="articles")
   //- Hits(:products="fruits" folder="categories" category="fruits")
   ServiceInfo
 </template>
@@ -20,23 +21,15 @@ export default{
   },
   async fetch ({ store }) {
       await store.dispatch('getFruitsHits')
-      await store.dispatch('getExoticsHits')
-      await store.dispatch('getVegetablesHits')
-      await store.dispatch('getBerriesHits')
+      await store.dispatch('getArticles')
   },
   computed: {
     fruitsHits() {
       return this.$store.state.fruitsHits
     },
-    exoticsHits() {
-      return this.$store.state.exoticsHits
+    articles() {
+      return this.$store.state.articles
     },
-    vegetablesHits() {
-      return this.$store.state.vegetablesHits
-    },
-    berriesHits() {
-      return this.$store.state.berriesHits
-    }
   },
   methods: {
     addToCart(e) {
@@ -56,4 +49,22 @@ export default{
     font-size: 28px;
   }
 }
+
+.all-links{
+    padding: 0 16px;
+    margin-bottom: 20px;
+    @media(min-width: 768px){
+      margin: 0 auto 24px;
+      width: fit-content;
+    }
+    @media(min-width: 992px){
+      margin-bottom: 40px;
+    }
+    @media(min-width: 1200px){
+      margin-bottom: 80px;
+    }
+    a{
+      color: #8ed081
+    }
+  }
 </style>

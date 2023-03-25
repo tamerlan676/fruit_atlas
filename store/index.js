@@ -18,6 +18,7 @@ const createStore = () => {
       fruits: [],
       exotics: [],
       vegetables: [],
+      articles: [],
       berries: [],
       green: [],
       baskets: [],
@@ -139,6 +140,9 @@ const createStore = () => {
       setBerriesHits (state, hits) {
         state.berriesHits = hits
       },
+      setArticles (state, articles) {
+        state.articles = articles
+      },
       setDeliveryCities (state, deliveryCities, deliveryRegion) {
         state.deliveryCities = deliveryCities
         state.deliveryRegion = deliveryRegion
@@ -200,6 +204,10 @@ const createStore = () => {
         async getBerriesHits ({ commit }) {
           const hits = await axios.get(`https://fruit-atlas.ru/admin/wp-json/wp/v2/berries?_embed&per_page=100`)
           commit('setBerriesHits', hits.data.filter((item) => { return item.acf.hit === true }))
+        },
+        async getArticles ({ commit }) {
+          const articles = await axios.get('https://fruit-atlas.ru/admin/wp-json/wp/v2/articles?_embed&per_page=100')
+          commit('setArticles', articles.data)
         },
         async getDeliveryCities ({ commit }, params) {
            await this.$axios.post("https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address",

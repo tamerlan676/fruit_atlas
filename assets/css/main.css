@@ -42,3 +42,8 @@
     -webkit-appearance: none;
     margin: 0;
   }
+
+  strong{
+    font-family: "EuclidBold";
+    font-size: 18px;
+  }
