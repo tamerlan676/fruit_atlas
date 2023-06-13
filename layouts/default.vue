@@ -199,6 +199,7 @@ export default{
           position: fixed;
           bottom: 10%;
           right: 20px;
+          z-index: 100;
           .pulse {
             width: 55px;
             height: 55px;

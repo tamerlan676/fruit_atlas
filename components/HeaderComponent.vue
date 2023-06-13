@@ -25,8 +25,6 @@
       li
         nuxt-link(to="/delivery") Доставка
       li
-        nuxt-link(to="/articles") Cтатьи
-      li
         nuxt-link(to="/contacts") Контакты
   .mob-sm
     .cart(@click='$emit("turnCart")')
@@ -68,7 +66,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .header{
   width: 100%;
   box-sizing: border-box;

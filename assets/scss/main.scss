@@ -20,6 +20,7 @@
     margin: 0;
     text-decoration: none;
     font-family: inherit;
+    box-sizing: border-box;
   }
   
   body{
@@ -31,6 +32,43 @@
     background: none;
     font-family: inherit;
     cursor: pointer
+  }
+
+  .section-title{
+    margin-bottom: 20px;
+  }
+
+  .orange-btn{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    justify-content: center;
+    border-radius: 50px;
+    height: 50px;
+    width: 100%;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    background: #FFBF60;
+    cursor: pointer;
+    @media(min-width: 992px){
+      width: 230px;
+    }
+  }
+  .yellow-btn{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    justify-content: center;
+    background: #FDDF55;
+    text-decoration: none;
+    border-radius: 50px;
+    height: 50px;
+    width: 100%;
+    text-transform: uppercase;
+    cursor: pointer;
+    @media(min-width: 992px){
+      width: 230px;
+    }
   }
   
   ul{

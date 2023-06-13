@@ -43,7 +43,7 @@ export default {
 <style lang="scss">
 .categories{
   .categories-wrapper{
-    padding: 32px 16px;
+    padding: 32px 24px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

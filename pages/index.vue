@@ -1,5 +1,6 @@
 <template lang="pug">
 .main 
+  Hero
   Categories
   AboutMini
   Scheme
@@ -7,6 +8,8 @@
   Hits(:hits="fruitsHits" category="fruits")
   .all-links 
     nuxt-link(to="categories/fruits") Смотреть все фрукты >
+  Reviews
+  Questions
   BannerBonus
   Articles(:articles="articles")
   //- Hits(:products="fruits" folder="categories" category="fruits")

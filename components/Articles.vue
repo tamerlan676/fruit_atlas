@@ -8,7 +8,7 @@
             .info
                 .date {{ article.acf.date }}
                 h3.title {{ article.title.rendered }}
-    nuxt-link.all-blog(to="/articles") Читать все статьи
+    //- nuxt-link.all-blog(to="/articles") Читать все статьи
                  
 </template>
 
@@ -29,7 +29,7 @@ export default{
 
 <style lang="scss" scoped>
 .articles{
-    padding: 40px 16px;
+    padding: 40px 24px;
     h2{
         text-align: center;
         margin-bottom: 40px;

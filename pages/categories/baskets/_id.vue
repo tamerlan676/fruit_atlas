@@ -56,7 +56,7 @@ export default {
         },
         {
           img: require("~/assets/images/baskets-icons/dialog.svg"),
-          text: `<span>Остались вопросы?</span>: Оперативно ответим в чате или по телефону: <a href="tel:79188208097">8 (918) 820-80-97</a>`
+          text: `<span>Остались вопросы?</span>: Оперативно ответим в чате или по телефону: <a href="tel:79933645588">8 (993) 364-55-88</a>`
         }
       ],
       counter: false

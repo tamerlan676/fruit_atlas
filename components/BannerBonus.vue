@@ -13,7 +13,7 @@ export default{
 
 <style lang="scss" scoped>
 .banner-bonus{
-    padding: 16px;
+    padding: 24px;
     margin-bottom: 40px;
     @media(min-width: 992px){
         padding: 0;

@@ -48,7 +48,7 @@
     .hits-wrapper{
         display: flex;
         overflow: auto;
-        padding: 0 16px;
+        padding: 0 24px;
         margin-bottom: 20px;
       @media(min-width: 768px){
         display: grid;

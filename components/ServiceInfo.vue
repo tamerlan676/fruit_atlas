@@ -28,7 +28,7 @@ export default{
 
 <style lang="scss" scoped>
 .service-info{
-    padding: 0 16px;
+    padding: 0 24px;
     margin-bottom: 40px;
     @media(min-width: 992px){
         padding: 0;

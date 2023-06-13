@@ -9,7 +9,7 @@ export default{
     name: 'AboutUs',
     head(){
         return {
-          title: 'О Компании Fruit Atlas'
+          title: 'Бонусные программы'
         }
     }
 }

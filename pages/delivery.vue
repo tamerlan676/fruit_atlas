@@ -23,7 +23,17 @@
         name: 'PayDelivery',
         head(){
             return {
-              title: 'Доставка и оплата Fruit Atlas'
+              title: 'Доставка свежих фруктов и овощей',
+              meta: [
+            { charset: 'utf-8' },
+            { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+            {
+              hid: 'description',
+              name: 'description',
+              content: 'Доставка свежих фруктов на дом в Москве и Московской области. Закажите качественные ягоды в интернет-магазине «Fruit Atlas».'
+            }
+          ],
+
             }
         },
         data() {

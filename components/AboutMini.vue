@@ -16,7 +16,7 @@ export default{
 
 <style lang="scss" scoped>
 .about-mini{
-    padding: 0 16px 40px;
+    padding: 0 24px 40px;
     white-space: pre-line;
     font-family: "EuclidMd";
     @media(min-width: 768px){

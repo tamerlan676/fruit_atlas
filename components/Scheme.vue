@@ -23,7 +23,7 @@
     
     <style lang="scss" scoped>
     .steps-wrapper{
-            padding:0 16px;
+            padding:0 24px;
             margin-bottom: 40px;
         @media(min-width: 768px){
             display: flex;
