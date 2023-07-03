@@ -56,7 +56,9 @@
         .hero{
           z-index: 2;
           position: relative;
-          height: 100vh;
+          @media(min-width: 992px){
+            height: calc(100vh - 80px);
+          }
           .wrapper{
               padding: 60px 24px 24px;
                @media(min-width: 992px){

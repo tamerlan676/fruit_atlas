@@ -1,7 +1,7 @@
 <template lang="pug">
 .main 
   Hero
-  Categories
+  Categories#categories
   AboutMini
   Scheme
   h2.hit-title Сезонные фрукты

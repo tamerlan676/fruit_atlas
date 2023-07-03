@@ -14,7 +14,8 @@
     Nuxt
     Footer
     .floating-call-btn 
-      a(href="https://wa.me/79933645588")
+      a.fl-btn(href="https://wa.me/79933645588")
+        .text(v-html="btn") {{ btn }}
         .pulse
           img(src="~/assets/images/fl-wts.svg")
 </template>
@@ -22,6 +23,7 @@
 export default{
     data() {
         return {
+            btn: `Ответим <br> в течении 2 минут`,
             menu: [
               {
                 title: 'Главная',
@@ -200,6 +202,40 @@ export default{
           bottom: 10%;
           right: 20px;
           z-index: 100;
+          .fl-btn{
+            display: flex;
+            .text{
+              position: relative;
+              background: #e5e5e5;
+              font-size: 12px;
+              padding: 10px;
+              width: fit-content;
+              color: #000;
+              margin-right: 13px;
+              display: flex;
+              align-items: center;
+              width: 130px;
+              border-radius: 5px;
+              &:before{
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 0;
+                border: solid transparent;
+                border-width: 10px;
+                top: 50%;
+                right: -20px;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+                border-left-color: #e5e5e5;
+                border-width: 8px;
+                right: -16px;
+                left: auto;
+                border-left-color: #e5e5e5;
+                border-right-color: transparent;
+              }
+            }
+          }
           .pulse {
             width: 55px;
             height: 55px;

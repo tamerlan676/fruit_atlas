@@ -219,7 +219,7 @@ export default {
         justify-content: center;
         border-radius: 50%;
         background: #F6D1AD;
-        padding: 5px;
+        padding: 10px;
         font-size: 12px;
         font-weight: 500;
         top: 0;
