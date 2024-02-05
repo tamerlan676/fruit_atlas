@@ -1,13 +1,13 @@
 <template lang="pug">
 .articles
     h1 Полезные статьи о фруктах и овощах
-    article.article(v-for="article in 10") 
-        nuxt-link.link(to="#")
+    article.article(v-for="article in articles") 
+        nuxt-link.img(:to="`/articles/${article.id}`")
             .img
-                img(src="~assets/images/cook.jpeg")
+                img(:src="article.acf.image")
             .info 
-                h2 10 чехлов, которые помогут мебели прослужить дольше
-                .tags Фрукты / Апельсин / Еда
+                h2 {{ article.title.rendered }}
+                .tags Фрукты / Овощи
 
 </template>
 
@@ -22,6 +22,14 @@ export default{
         return {
           title: 'Полезные статьи о фруктах и овощах'
         }
+    },
+    async fetch ({ store }) {
+      await store.dispatch('getArticles')
+},
+computed: {
+        articles() {
+          return this.$store.state.articles
+        },
     }
 }
 </script>

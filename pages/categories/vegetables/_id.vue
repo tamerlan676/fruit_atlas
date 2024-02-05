@@ -65,7 +65,7 @@
         },
         async fetch ({ store }) {
             await store.dispatch('getVegetables')
-      },
+          },
             head(){
               return {
                 title: this.getItem.acf.seo_title,

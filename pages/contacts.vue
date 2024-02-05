@@ -4,13 +4,13 @@
     .contacts-wrapper 
         .contact
             h3 Служба поддержки клиентов
-            a(href="tel:79933645588") +7 993 364 55 88
+            a(href="tel:79188208097") +7 918 820 80 97
         .contact
             h3 Свяжитесь с нами в социальных сетях
             .socials 
                 a(href="https://vk.com/fruitatlas" target="_blank") 
                     img(width="30px" src="~/assets/images/c-vk.svg")
-                a(href="https://wa.me/79933645588" target="_blank") 
+                a(href="https://wa.me/79188208097" target="_blank") 
                     img(width="30px" src="~/assets/images/c-whats.svg")
                 a(href="https://t.me/fruit_atlas" target="_blank") 
                     img(width="30px" src="~/assets/images/c-tlg.svg")

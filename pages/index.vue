@@ -12,8 +12,7 @@
   Questions
   BannerBonus
   Articles(:articles="articles")
-  //- Hits(:products="fruits" folder="categories" category="fruits")
-  ServiceInfo
+  Hits(:products="fruits" folder="categories" category="fruits")
 </template>
 
 <script>

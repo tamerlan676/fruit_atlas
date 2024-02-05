@@ -14,7 +14,7 @@
     Nuxt
     Footer
     .floating-call-btn 
-      a.fl-btn(href="https://wa.me/79933645588")
+      a.fl-btn(href="https://wa.me/79188208097")
         .text(v-html="btn") {{ btn }}
         .pulse
           img(src="~/assets/images/fl-wts.svg")
@@ -75,7 +75,7 @@ export default{
         }
     },
     mounted() {
-      this.$store.commit('setCart',)
+      // this.$store.commit('setCart',)
     },
     methods: {
         turnMenu() {
@@ -199,7 +199,7 @@ export default{
         }
         .floating-call-btn{
           position: fixed;
-          bottom: 10%;
+          bottom: 5%;
           right: 20px;
           z-index: 100;
           .fl-btn{

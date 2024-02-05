@@ -7,11 +7,6 @@
 <script>
 export default{
     name: 'AboutUs',
-    head(){
-        return {
-          title: 'О Компании Fruit Atlas'
-        }
-    },
     data() {
         return {
             text: `Добро пожаловать во Fruit-Atlas, наш универсальный интернет-магазин самых свежих фруктов и овощей.
@@ -27,7 +22,12 @@ export default{
 
 Мы будем рады доставить свежие, вкусные фрукты и овощи к вашей двери.`
         }
-    }
+    },
+    head(){
+        return {
+          title: 'О Компании Fruit Atlas'
+        }
+    },
 }
 </script>
 

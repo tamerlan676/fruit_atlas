@@ -9,7 +9,12 @@ export default{
     name: 'AboutUs',
     head(){
         return {
-          title: 'Бонусные программы'
+          title: 'Бонусные программы',
+          meta: [
+                      { hid: 'description', 
+                      name: 'description', 
+                      content: 'Заказать фрукты в москве со специальными акциями можно в нашем магазине' },
+                ]
         }
     }
 }

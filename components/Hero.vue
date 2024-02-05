@@ -2,8 +2,8 @@
 .hero
     .wrapper
         .left
-            h1 Доставляем фрукты и овощи премиального качества
-            p.md Закажите фрукты или овощи которые порадуют вас вкусом и качеством
+            h1 Доставка фруктов и овощей по Москве и Московской области
+            p.md Закажите фрукты и овощи которые порадуют вас вкусом и качеством
             .buttons.md
                 nuxt-link.orange-btn(:to="{ path: '/', hash:'#categories'}") Хочу попробовать
         .right
@@ -60,7 +60,7 @@
             height: calc(100vh - 80px);
           }
           .wrapper{
-              padding: 60px 24px 24px;
+              padding: 24px 24px 24px;
                @media(min-width: 992px){
                   display: flex;
                   width: 1120px;

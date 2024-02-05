@@ -11,10 +11,10 @@
         .info 
             .left
                 h3 {{ item.title.rendered }}
-                .country {{ item.acf.country }}
             .right
-                .price {{ item.acf.price }} ₽
+                .price от {{ item.acf.price }} ₽
                     span / {{ item.acf.quantity }}{{ item.acf.unit }}
+                    span.price-info Цена может меняться в зависимости от объема
                 .add-cart(@click="addToCart(item)")
                     img(src="~/assets/images/min-cart.svg")
 </template>
@@ -162,6 +162,12 @@
                 span{
                     font-size: 13px;
                     color: grey
+                }
+                .price-info{
+                  display: block;
+                  margin-top: 10px;
+                  width: 130px;
+                  font-size: 10px;
                 }
               }
               .add-cart{

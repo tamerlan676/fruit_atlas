@@ -1,8 +1,7 @@
 export default {
-  target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: '▷ Купить свежие фрукты и овощи онлайн - быстрая доставка в ваш дом | Fruit Atlas',
+    title: '▷ Доставка фруктов и овощей по Москве и Московской области',
     htmlAttrs: {
       lang: 'en',
     },
@@ -54,12 +53,15 @@ export default {
     }
   },
 
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
+  // Build Configuration: https://go.nuxtjs.dev/config-build
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: '/',
   },
+  generate: {
+    fallback: true 
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {}
 }
