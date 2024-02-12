@@ -1,6 +1,6 @@
 <template lang="pug">
 .main 
-  Hero
+  HeroCenter(title="Доставка фруктов и овощей в Москве и Московской области" desc="Мы доставляем только самые свежие фрукты и овощи прямо к вашему порогу" :img="img")
   Categories#categories
   AboutMini
   Scheme
@@ -12,13 +12,13 @@
   Questions
   BannerBonus
   Articles(:articles="articles")
-  Hits(:products="fruits" folder="categories" category="fruits")
 </template>
 
 <script>
 export default{
   data() {
     return {
+      img: require('~/assets/images/hero.jpg'),
     }
   },
   async fetch ({ store }) {

@@ -2,8 +2,8 @@
 .hero
     .wrapper
         .left
-            h1 Доставка фруктов и овощей по Москве и Московской области
-            p.md Закажите фрукты и овощи которые порадуют вас вкусом и качеством
+            h1 {{ title }}
+            p.md {{ desc }}
             .buttons.md
                 nuxt-link.orange-btn(:to="{ path: '/', hash:'#categories'}") Хочу попробовать
         .right
@@ -23,6 +23,8 @@
                 type: Boolean,
                 default: false
               },
+              title: String,
+              desc: String
           },
           data() {
             return{
@@ -136,8 +138,8 @@
           }
           h1{
             color: #000;
-            font-size: 33px;
-            line-height: 42px;
+            font-size: 32px;
+            line-height: 40px;
             @media(min-width: 1200px){
               font-size: 35px;
               margin-bottom: 16px;

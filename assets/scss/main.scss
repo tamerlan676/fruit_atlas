@@ -22,6 +22,10 @@
     font-family: inherit;
     box-sizing: border-box;
   }
+
+  h1, h2, h3{
+    font-family: "EuclidBold";
+  }
   
   body{
     font-family: "EuclidReg";
@@ -31,7 +35,10 @@
     border: none;
     background: none;
     font-family: inherit;
-    cursor: pointer
+    cursor: pointer;
+    &:hover{
+      cursor:pointer
+    }
   }
 
   .section-title{
