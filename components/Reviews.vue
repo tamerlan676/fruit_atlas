@@ -68,16 +68,6 @@ section.reviews
             padding: 120px 0;
             margin: 0 auto;
         }
-        .section-title::before{
-            position: absolute;
-            content: '';
-            width: 350px;
-            height: 8px;
-            bottom: 14px;
-            background: #FDDF55;
-            display: block;
-            z-index: -1;
-        }
         p{
             margin-bottom: 40px;
         }

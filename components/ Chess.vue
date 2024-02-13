@@ -29,6 +29,7 @@ export default{
     background: rgb(245, 245, 245);
     @media(min-width: 992px){
         padding: 120px 0;
+        border-radius: 150px 0 0 0;
     }
     h2{
         margin-bottom: 16px;
@@ -78,7 +79,7 @@ export default{
             max-width: 100%;
             @media(min-width: 992px){
                 width: 544px;
-                height: 480px;
+                height: 544px;
             }
         }
         &:nth-child(2){

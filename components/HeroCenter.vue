@@ -1,44 +1,41 @@
 <template lang="pug">
 .hero
     .wrapper
-      h1 {{ title }}
-      p.desc {{ desc }}
+      h1(v-html="title") {{ title }}
+      p.desc(v-html="desc") {{ desc }}
       .buttons
         .button
-          button(@click="showPopup") Заказать звонок
-        .button
-          button(@click="showPopup") Получить прайс
+          button(@click="$nuxt.$emit('showPopup', true)") Заказать звонок
+        //- .button
+        //-   button(@click="showPopup") Получить прайс
         
     img(:src="img")
     </template>
         
-        <script>
-        export default {
-          name: 'HeroBlock',
-          props: {
-              activeBurger: {
-                type: Boolean,
-                default: false
-              },
-              title: String,
-              desc: String,
-              img: String
-          },
-          data() {
-            return{
-      
-            }
-          },
-          methods: {
-              showPopup() {
-                this.$emit('show-popup')
-              }
-          },
-          computed: {
+  <script>
+      export default {
+        name: 'HeroBlock',
+        props: {
+            activeBurger: {
+              type: Boolean,
+              default: false
+            },
+            title: String,
+            desc: String,
+            img: String
+        },
+        data() {
+          return{
+    
+          }
+        },
+        methods: {
+        },
+        computed: {
 
-          },
-        }
-        </script>
+        },
+      }
+  </script>
         
         <style scoped lang="scss">
         .hero{
@@ -60,6 +57,7 @@
             font-size: 32px;
             line-height: 40px;
             margin-bottom: 24px;
+            white-space: pre-line;
             @media(min-width: 1200px){
               font-size: 35px;
               margin-bottom: 16px;

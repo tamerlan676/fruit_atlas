@@ -8,22 +8,16 @@
     ul.parent-ul
       li
         nuxt-link(to="/") Главная
-      li.dropdown-item Каталог
-        ul.child-ul(:class="{active: catDroodown}")
-          li
-            nuxt-link(to="/categories/fruits") Фрукты
-          li
-            nuxt-link(to="/categories/exotics") Экзотика
-          li
-            nuxt-link(to="/categories/vegetables") Овощи
-          li
-            nuxt-link(to="/categories/berries") Ягоды
-          li
-            nuxt-link(to="/categories/green") Зелень
       li
-        nuxt-link(to="/about") О Компании
+        nuxt-link(to="/categories/fruits") Фрукты
       li
-        nuxt-link(to="/delivery") Доставка
+        nuxt-link(to="/categories/exotics") Экзотика
+      li
+        nuxt-link(to="/categories/vegetables") Овощи
+      li
+        nuxt-link(to="/categories/berries") Ягоды
+      li
+        nuxt-link(to="/categories/green") Зелень
       li
         nuxt-link(to="/contacts") Контакты
   .mob-sm

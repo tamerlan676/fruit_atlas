@@ -64,16 +64,6 @@
             margin: 0 auto;
             padding: 120px 0;
        }
-       .section-title::before{
-            position: absolute;
-            content: '';
-            width: 350px;
-            height: 8px;
-            bottom: 14px;
-            background: #FDDF55;
-            display: block;
-            z-index: -1;
-        }
        .question-block{
             border-bottom: 2px solid #9D9D9D;
             color: #9D9D9D;
@@ -84,7 +74,7 @@
                 align-items: center;
                 justify-content: space-between;
                 cursor: pointer;
-                height: 50px;
+                height: 80px;
                 .text{
                     width: 300px;
                 }

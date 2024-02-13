@@ -1,29 +1,56 @@
 <template lang="pug">
 .main 
-  HeroCenter(title="Доставка фруктов и овощей в Москве и Московской области" desc="Мы доставляем только самые свежие фрукты и овощи прямо к вашему порогу" :img="img")
-  Categories#categories
-  AboutMini
-  Scheme
-  h2.hit-title Сезонные фрукты
-  Hits(:hits="fruitsHits" category="fruits")
-  .all-links 
-    nuxt-link(to="categories/fruits") Смотреть все фрукты >
+  HeroCenter(:title="heroTitle" :desc="heroDesc" :img="img" @showPopup="showPopup")
+  Chess(:title="chessTitle" :desc="chessDesc" :chessList="chessList")
+  .divider
+  Banner(:title="bannerTitle" :desc="bannerDesc" :img="bannerImg")
+  Numbers
   Reviews
   Questions
   BannerBonus
   Articles(:articles="articles")
+  Popup(:showPopup="showPopup" @showPopup="showPopup")
 </template>
 
 <script>
 export default{
   data() {
     return {
+      heroTitle: `Доставка фруктов и овощей в Москве и&nbsp;Московской&nbsp;области`,
+      heroDesc: `Мы предлагаем быструю и удобную доставку свежих фруктов, овощей, ягод и зелени прямо к вашему порогу. <br>Свяжитесь с нами и мы раскажем вам все подробности`,
+      chessTitle: 'Преимущества при работе с нами',
+      chessDesc: 'Мы стремимся работать так, чтобы к нам возвращались снова и снова',
+      chessList: [
+        {
+          title: 'Безупречное качество',
+          desc: 'Мы тщательно отбираем свежие фрукты и овощи у надежных поставщиков, чтобы убедиться, что каждая посылка, доставленная к вам, соответствует нашим высоким стандартам качества.',
+          img: require('~/assets/images/qual.jpg')
+        },
+        {
+          title: 'Быстрая и удобная доставка',
+          desc: 'Мы стараемся организовать  быструю и надежную доставку прямо к вашей двери. Независимо от вашего местоположения, вы можете быть уверены, что ваши продукты будут доставлены вовремя.',
+          img: require('~/assets/images/del.jpg')
+        },
+        {
+          title: 'Широкий ассортимент',
+          desc: 'Мы предлагаем широкий выбор фруктов и овощей, чтобы удовлетворить любой вкус и предпочтение. От классических и сезонных продуктов до экзотических фруктов и овощей - у нас есть все, что вам нужно',
+          img: require('~/assets/images/assort.jpg')
+        },
+
+      ],
+      bannerTitle: 'Свяжитесь с нами',
+      bannerDesc: 'Свяжитесь с нами и мы расскажем, как вам оформить заказ и ответим на все ваши вопросы',
+      bannerImg: require('~/assets/images/banner.png'),
       img: require('~/assets/images/hero.jpg'),
+      showPopup: false
     }
   },
   async fetch ({ store }) {
-      await store.dispatch('getFruitsHits')
+      // await store.dispatch('getFruitsHits')
       await store.dispatch('getArticles')
+  },
+  created() {
+    this.$nuxt.$on('showPopup', ($event) => this.show($event))
   },
   computed: {
     fruitsHits() {
@@ -37,36 +64,23 @@ export default{
     addToCart(e) {
       this.$store.commit('addToCart', e)
     },
+    show(e) {
+      console.log(e)
+      this.showPopup = e
+    },
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.hit-title{
-  padding-left: 16px;
-  margin-bottom: 20px;
-  @media(min-width: 992px){
-    margin-bottom: 40px;
-    text-align: center;
-    font-size: 28px;
-  }
+.main{
+  position: relative;
 }
-
-.all-links{
-    padding: 0 16px;
-    margin-bottom: 20px;
-    @media(min-width: 768px){
-      margin: 0 auto 24px;
-      width: fit-content;
-    }
-    @media(min-width: 992px){
-      margin-bottom: 40px;
-    }
-    @media(min-width: 1200px){
-      margin-bottom: 80px;
-    }
-    a{
-      color: #8ed081
-    }
+.divider{
+  height: 80px;
+  @media(min-width: 992px){
+    height: 120px;
   }
+
+}
 </style>

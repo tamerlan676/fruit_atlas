@@ -8,7 +8,7 @@
                 .button 
                     button() Написать в уотсап
                 .button 
-                    button() Заказать звонок
+                    button(@click="$nuxt.$emit('showPopup', true)") Заказать звонок
         .right
             img(:src='img')
 </template>

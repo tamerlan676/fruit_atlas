@@ -29,11 +29,6 @@ export default{
                 title: 'Главная',
                 link: '/',
               },
-              {
-                title: 'Каталог',
-                link: '#',
-                sub: false,
-                subitems: [
                   {
                     title: 'Фрукты',
                     link: '/categories/fruits'
@@ -54,8 +49,6 @@ export default{
                     title: 'Зелень',
                     link: '/categories/green'
                   },
-                ],
-              },
               {
                 title: 'О Компании',
                 link: '/about'

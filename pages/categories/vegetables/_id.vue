@@ -5,7 +5,7 @@
         .img
             img(:src='getItem.acf.image')
         .info
-            h3 {{ getItem.title.rendered }}
+            h1 Заказать {{ getItem.title.rendered }} с доставкой
             p.description {{ getItem.acf.description }}
             .price-weight 
                 .price {{ getItem.acf.price }} ₽
