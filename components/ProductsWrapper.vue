@@ -166,18 +166,23 @@
                 .price-info{
                   display: block;
                   margin-top: 10px;
-                  width: 130px;
                   font-size: 10px;
+                  @media(min-width: 768px){
+                    width: 130px;
+                  }
                 }
               }
               .add-cart{
-                width: 36px;
+                width: 70px;
                 height: 36px;
                 border-radius: 100%;
                 background: #8ed081;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                @media(min-width: 768px){
+                  width: 36px;
+                }
                 cursor: pointer;
                 img{
                    height: 20px;

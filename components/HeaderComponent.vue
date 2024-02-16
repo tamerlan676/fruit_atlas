@@ -19,6 +19,8 @@
       li
         nuxt-link(to="/categories/green") Зелень
       li
+        nuxt-link(to="/categories/baskets") Фруктовые корзины
+      li
         nuxt-link(to="/contacts") Контакты
   .mob-sm
     .cart(@click='$emit("turnCart")')

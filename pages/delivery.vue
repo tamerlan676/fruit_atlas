@@ -59,7 +59,7 @@
                 },
                 {
                     title: 'Заказ по телефону',
-                    text: `Принимаем заказы с 9:00 до 20:00 по телефону или WhatsApp по номеру: <br> <a style="color: white; text-decoration: underline" href="tel:+79933645588">+7 993 364 55 88</a><br>`
+                    text: `Принимаем заказы с 9:00 до 20:00 по телефону или WhatsApp по номеру: <br> <a style="color: white; text-decoration: underline" href="tel:+79188208097">+7 928 820 80 97</a><br>`
                 },
                 {
                     title: 'Самовывоз',

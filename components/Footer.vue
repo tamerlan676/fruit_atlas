@@ -67,7 +67,11 @@ export default{
                 },
                 {
                     title: 'Доставка Овощей',
-                    href: '/categories/vegetables'
+                    href: '/vegetables'
+                },
+                {
+                    title: 'Доставка Фруктовых корзин',
+                    href: '/baskets'
                 },
                 {
                     title: 'Доставка Зелени',

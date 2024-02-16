@@ -29,26 +29,30 @@ export default{
                 title: 'Главная',
                 link: '/',
               },
-                  {
-                    title: 'Фрукты',
-                    link: '/categories/fruits'
-                  },
-                  {
-                    title: 'Экзотика',
-                    link: '/categories/exotics'
-                  },
-                  {
-                    title: 'Овощи',
-                    link: '/categories/vegetables'
-                  },
-                  {
-                    title: 'Ягоды',
-                    link: '/categories/berries'
-                  },
-                  {
-                    title: 'Зелень',
-                    link: '/categories/green'
-                  },
+              {
+                title: 'Фрукты',
+                link: '/categories/fruits'
+              },
+              {
+                title: 'Экзотика',
+                link: '/categories/exotics'
+              },
+              {
+                title: 'Овощи',
+                link: '/categories/vegetables'
+              },
+              {
+                title: 'Ягоды',
+                link: '/categories/berries'
+              },
+              {
+                title: 'Зелень',
+                link: '/categories/green'
+              },
+              {
+                title: 'Фруктовые корзины',
+                link: '/categories/baskets'
+              },
               {
                 title: 'О Компании',
                 link: '/about'

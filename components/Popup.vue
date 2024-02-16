@@ -105,6 +105,7 @@ export default{
         padding: 40px 24px;
         @media(min-width: 992px){
             width: 500px;
+            border-radius: 30px;
         }
         h3{
             margin-bottom: 24px;
@@ -149,7 +150,7 @@ export default{
         height: 40px;
         display: flex;
         align-items: center;
-        justify-content: end;
+        justify-content: flex-end;
         color: #656d78;
         margin-bottom: 24px;
         .close{

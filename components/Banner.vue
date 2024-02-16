@@ -6,7 +6,7 @@
             p.desc {{ desc }}
             .buttons 
                 .button 
-                    button() Написать в уотсап
+                    a.btn(href="https://wa.me/79188208097") Написать в уотсап
                 .button 
                     button(@click="$nuxt.$emit('showPopup', true)") Заказать звонок
         .right
@@ -59,7 +59,7 @@ export default{
               display: flex;
               width: fit-content;
             }
-            button{
+            button, .btn{
               display: flex;
               background: #2DBE64;
               color: #fff;
@@ -67,6 +67,8 @@ export default{
               padding: 20px;
               align-items: center;
               justify-content: center;
+              font-size: 16px;
+              cursor: pointer;
               border-radius: 10px;
               text-transform: uppercase;
               margin-bottom: 10px;
