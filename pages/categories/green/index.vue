@@ -47,7 +47,7 @@
         },
         head(){
           return {
-            title: 'Заказать ягоды с доставкой на дом',
+            title: 'Заказать зелень с доставкой на дом',
             meta: [
               { charset: 'utf-8' },
               { name: 'viewport', content: 'width=device-width, initial-scale=1' },

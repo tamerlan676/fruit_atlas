@@ -72,7 +72,7 @@ export default{
         }
     },
     mounted() {
-      // this.$store.commit('setCart',)
+      this.$store.commit('setCart',)
     },
     methods: {
         turnMenu() {
