@@ -30,6 +30,8 @@
         .text(@click="addToCart(getItem)") 
             img(src="~/assets/images/min-cart-btn.svg")
             p В корзину
+    Reviews
+    Banner(:title="bannerTitle" :desc="bannerDesc" :img="bannerImg")
 </template>
       
       <script>
@@ -37,6 +39,9 @@
         data() {
           return {
             id: this.$route.params.id,
+            bannerTitle: 'Свяжитесь с нами',
+            bannerDesc: 'Свяжитесь с нами и мы расскажем, как вам оформить заказ и ответим на все ваши вопросы',
+            bannerImg: require('~/assets/images/banner.png'),
             addedMessage: false,
             iconsInfo: [
             {

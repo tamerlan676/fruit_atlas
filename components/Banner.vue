@@ -27,6 +27,9 @@ export default{
 <style lang="scss" scoped>
 .banner{
     padding: 0 24px;
+    @media(min-width: 992px){
+        padding: 80px 0;
+    }
     .banner-wrapper{
         width: 100%;
         background: #f1f1f1;

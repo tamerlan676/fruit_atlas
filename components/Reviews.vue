@@ -65,7 +65,7 @@ section.reviews
         padding: 40px 24px;
         @media(min-width: 1200px){
             width: 1120px;
-            padding: 120px 0;
+            padding: 80px 0;
             margin: 0 auto;
         }
         p{

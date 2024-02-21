@@ -3,7 +3,7 @@
     .deli-banner 
         .banner-wrapper 
             .info 
-                h2 Надежная доставка ваших продуктов
+                h1 Надежная доставка фруктов и овощей
                 p Выберем самое лучшее и доставим прямо к вашему порогу
             .image
                 img(src="~/assets/images/del-banner.png" alt="Надежная доставка fruit atlas")
