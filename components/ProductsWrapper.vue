@@ -15,8 +15,7 @@
                 .price от {{ item.acf.price }} ₽
                     span / {{ item.acf.quantity }}{{ item.acf.unit }}
                     span.price-info Цена может меняться в зависимости от объема
-                .add-cart(@click="addToCart(item)")
-                    img(src="~/assets/images/min-cart.svg")
+            button.add-cart(@click="addToCart(item)") в корзину
 </template>
     
 <script>
@@ -155,6 +154,7 @@
               display: flex;
               align-items: center;
               justify-content: space-between;
+              margin-bottom: 16px;
               .price{
                 font-weight: 500;
                 font-size: 16px;
@@ -172,23 +172,19 @@
                   }
                 }
               }
-              .add-cart{
-                width: 70px;
-                height: 36px;
-                border-radius: 100%;
+            }
+            .add-cart{
                 background: #8ed081;
+                border-radius: 10px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                @media(min-width: 768px){
-                  width: 36px;
-                }
                 cursor: pointer;
-                img{
-                   height: 20px;
-                }
+                width: 100%;
+                height: 40px;
+                color: #fff;
+                text-transform: uppercase;
               }
-            }
           }
           &:hover{
             .img{
