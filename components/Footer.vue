@@ -41,59 +41,59 @@ export default{
             menu_1: [
                 {
                     title: 'Фрукты',
-                    href: '/categories/fruits'
+                    href: '/categories/fruits/'
                 },
                 {
                     title: 'Экзотические фрукты',
-                    href: '/categories/exotics'
+                    href: '/categories/exotics/'
                 },
                 {
                     title: 'Овощи',
-                    href: '/categories/vegetables'
+                    href: '/categories/vegetables/'
                 },
                 {
                     title: 'Зелень',
-                    href: '/categories/green'
+                    href: '/categories/green/'
                 },
             ],
             menu_2: [
                 {
                     title: 'Доставка Фруктов',
-                    href: '/categories/fruits'
+                    href: '/categories/fruits/'
                 },
                 {
                     title: 'Доставка экзотики',
-                    href: '/categories/exotics'
+                    href: '/categories/exotics/'
                 },
                 {
                     title: 'Доставка Овощей',
-                    href: '/vegetables'
+                    href: '/vegetables/'
                 },
                 {
                     title: 'Доставка Фруктовых корзин',
-                    href: '/baskets'
+                    href: '/baskets/'
                 },
                 {
                     title: 'Доставка Зелени',
-                    href: '/categories/green'
+                    href: '/categories/green/'
                 },
             ],
             menu_3: [
                 {
                     title: 'О комапнии',
-                    href: '/about'
+                    href: '/about/'
                 },
                 {
                     title: 'Доставка',
-                    href: '/delivery'
+                    href: '/delivery/'
                 },
                 {
                     title: 'Акции',
-                    href: '/bonuses'
+                    href: '/bonuses/'
                 },
                 {
                     title: 'Контакты',
-                    href: '/contacts'
+                    href: '/contacts/'
                 },
             ],
             menu_4: [

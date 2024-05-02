@@ -9,19 +9,19 @@
       li
         nuxt-link(to="/") Главная
       li
-        nuxt-link(to="/categories/fruits") Фрукты
+        nuxt-link(to="/categories/fruits/") Фрукты
       li
-        nuxt-link(to="/categories/exotics") Экзотика
+        nuxt-link(to="/categories/exotics/") Экзотика
       li
-        nuxt-link(to="/categories/vegetables") Овощи
+        nuxt-link(to="/categories/vegetables/") Овощи
       li
-        nuxt-link(to="/categories/berries") Ягоды
+        nuxt-link(to="/categories/berries/") Ягоды
       li
-        nuxt-link(to="/categories/green") Зелень
+        nuxt-link(to="/categories/green/") Зелень
       li
-        nuxt-link(to="/categories/baskets") Фруктовые корзины
+        nuxt-link(to="/categories/baskets/") Фруктовые корзины
       li
-        nuxt-link(to="/contacts") Контакты
+        nuxt-link(to="/contacts/") Контакты
   .mob-sm
     .cart(@click='$emit("turnCart")')
       img(width="30px" src="~/assets/images/cart.svg")
