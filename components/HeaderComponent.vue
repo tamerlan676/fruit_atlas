@@ -2,7 +2,10 @@
 .header
   .burger(@click='$emit("turnMenu")' :class="{active: activeBurger}")
     span
-  nuxt-link(to="/")
+  .navbar__brand(v-if="$route.path !== '/'")
+    nuxt-link(to="/")
+      .name fruit-atlas
+  .navbar__brand(v-else)
     .name fruit-atlas
   .menu-lg
     ul.parent-ul
