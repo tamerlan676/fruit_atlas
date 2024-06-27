@@ -1,14 +1,14 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: '▷ Доставка фруктов и овощей по Москве и Московской области',
+    title: '▷ Доставка свежих фруктов на дом в Москве',
     htmlAttrs: {
       lang: 'en',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Мы предлагаем удобную и быструю доставку свежих овощей и фруктов с помощью нашего интернет магазина. На нашем сайте можно заказать фрукты, ягоды, овощи оптом и в розницу' },
+      { hid: 'description', name: 'description', content: 'Мы предлагаем удобную и быструю доставку свежих фруктов с помощью нашего интернет магазина. На нашем сайте можно заказать фрукты под любые нужды и по разным ценам' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
@@ -26,20 +26,26 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    
   ],
+  
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/google-analytics',
     [
       '@nuxtjs/yandex-metrika',
       {
         id: '92446370',
         webvisor: true
-      }
-    ]
+      },
+    ],
   ],
+  googleAnalytics: {
+    id: 'GTM-WG63BM7J' // Replace with your Google Analytics Measurement ID
+  },
 
   router: {
     scrollBehavior (to) {

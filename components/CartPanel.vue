@@ -3,7 +3,7 @@
     header
       .basket-title Корзина
       img( width="30px" src="~/assets/images/close.svg" @click="$emit('turnCart')")
-    div(v-if="cart.length") 
+    div(v-if="cart.length > 0") 
       .products-list 
         .product(v-for="(product, id) in cart" :key="id")
           .delete(@click="deleteProduct(product, id)")

@@ -1,5 +1,6 @@
 <template lang="pug">
 .category
+    Breadcrumbs(:razdel="razdel" currentPage="Овощи")
     .category-info
         h1.title Заказывайте овощи с быстрой и удобной доставкой на дом 
     .category-flex
@@ -17,6 +18,10 @@
     data() {
       return {
         bannerTitle: 'Свяжитесь с нами',
+        razdel: {
+            title: 'Каталог',
+            link: '/katalog/'
+          },
         bannerDesc: 'Свяжитесь с нами и мы расскажем, как вам оформить заказ и ответим на все ваши вопросы',
         bannerImg: require('~/assets/images/banner.png'),
         showPopup: false,

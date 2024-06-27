@@ -1,5 +1,6 @@
 <template lang="pug">
 .category
+    Breadcrumbs(:razdel="razdel" currentPage="Зелень")
     .category-info
         h1.title Заказывайте зелень с быстрой и удобной доставкой на дом 
     .category-flex
@@ -16,6 +17,10 @@
         name: 'SlugCategory',
         data() {
           return {
+            razdel: {
+            title: 'Каталог',
+            link: '/katalog/'
+            },
             bannerTitle: 'Свяжитесь с нами',
             bannerDesc: 'Свяжитесь с нами и мы расскажем, как вам оформить заказ и ответим на все ваши вопросы',
             bannerImg: require('~/assets/images/banner.png'),

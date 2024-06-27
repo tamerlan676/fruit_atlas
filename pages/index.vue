@@ -1,6 +1,7 @@
 <template lang="pug">
 .main 
   HeroCenter(:title="heroTitle" :desc="heroDesc" :img="img" @showPopup="showPopup")
+  Categories
   Chess(:title="chessTitle" :desc="chessDesc" :chessList="chessList")
   .divider
   Banner(:title="bannerTitle" :desc="bannerDesc" :img="bannerImg")
@@ -16,8 +17,8 @@
 export default{
   data() {
     return {
-      heroTitle: `Доставка фруктов и овощей по Москве`,
-      heroDesc: `Мы предлагаем быструю и удобную доставку свежих фруктов, овощей, ягод и зелени прямо к вашему порогу. <br>Свяжитесь с нами и мы раскажем вам все подробности`,
+      heroTitle: `Доставка свежих фруктов по Москве`,
+      heroDesc: `Мы предлагаем быструю и удобную доставку свежих фруктов, прямо к вашему порогу. <br>Свяжитесь с нами и мы раскажем вам все подробности`,
       chessTitle: 'Преимущества при работе с нами',
       chessDesc: 'Мы стремимся работать так, чтобы к нам возвращались снова и снова',
       chessList: [
@@ -41,7 +42,7 @@ export default{
       bannerTitle: 'Свяжитесь с нами',
       bannerDesc: 'Свяжитесь с нами и мы расскажем, как вам оформить заказ и ответим на все ваши вопросы',
       bannerImg: require('~/assets/images/banner.png'),
-      img: require('~/assets/images/hero.jpg'),
+      img: require('~/assets/images/hero-fruits.jpg'),
       showPopup: false
     }
   },

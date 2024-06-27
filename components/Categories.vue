@@ -33,6 +33,26 @@ export default {
           link: '/categories/green',
           img: require('~/assets/images/green.png')
         },
+        {
+          title: ' Ягоды',
+          link: '/categories/berries',
+          img: require('~/assets/images/berries.png')
+        },
+        {
+          title: 'Сухофрукты',
+          link: '#',
+          img: require('~/assets/images/suhofrukti.png')
+        },
+        {
+          title: 'Орехи',
+          link: '#',
+          img: require('~/assets/images/nuts.png')
+        },
+        {
+          title: 'Соки',
+          link: '#',
+          img: require('~/assets/images/juces.png')
+        },
       ]
 
     }
@@ -104,13 +124,25 @@ export default {
         background:#E3745C
       }
       &:nth-child(2){
-        background: #EE8BDE;
+        background: #b145e7;
       }
       &:nth-child(3){
         background: #E3BD5C;
       }
       &:nth-child(4){
         background: #44d175;
+      }
+      &:nth-child(5){
+        background: #d144a9;
+      }
+      &:nth-child(6){
+        background: #e9ed0e;
+      }
+      &:nth-child(7){
+        background: #b45817;
+      }
+      &:nth-child(8){
+        background: #b4172c;
       }
       &:hover{
         .category-icon{

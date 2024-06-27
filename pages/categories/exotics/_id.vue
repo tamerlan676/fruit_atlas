@@ -1,6 +1,5 @@
 <template lang="pug">
 .inner-product 
-    Breadcrumbs
     .product-wrapper
         .img
             img(:src='getItem.acf.image')
