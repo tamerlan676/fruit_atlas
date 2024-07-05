@@ -15,7 +15,7 @@ section.reviews
         name: 'ReviewsComp',
       data() {
         return {
-            title: `Наши клиенты остаются довольными <br> Вот доказательства:`,
+            title: `Отзывы довольных клиентов:`,
           reviews: [ 
             {
                 img: require("~/assets/images/persons/1.jpg"),

@@ -82,7 +82,7 @@ export default{
                 height: 544px;
             }
         }
-        &:nth-child(2){
+        &:nth-child(2n){
             flex-direction: row-reverse;
         }
     }

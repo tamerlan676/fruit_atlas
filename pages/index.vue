@@ -3,6 +3,8 @@
   HeroCenter(:title="heroTitle" :desc="heroDesc" :img="img" @showPopup="showPopup")
   Categories
   Chess(:title="chessTitle" :desc="chessDesc" :chessList="chessList")
+  Hits(:hits="fruitsHits" category="fruits" title="Сезонные фрукты" link="https://fruit-atlas.ru/categories/fruits")
+  Hits(:hits="vegetablesHits" category="vegetables" title="Сезонные овощи" link="https://fruit-atlas.ru/categories/vegetables")
   .divider
   Banner(:title="bannerTitle" :desc="bannerDesc" :img="bannerImg")
   Numbers
@@ -17,7 +19,7 @@
 export default{
   data() {
     return {
-      heroTitle: `Доставка свежих фруктов по Москве`,
+      heroTitle: `Доставка фруктов и овощей по Москве`,
       heroDesc: `Мы предлагаем быструю и удобную доставку свежих фруктов, прямо к вашему порогу. <br>Свяжитесь с нами и мы раскажем вам все подробности`,
       chessTitle: 'Преимущества при работе с нами',
       chessDesc: 'Мы стремимся работать так, чтобы к нам возвращались снова и снова',
@@ -47,7 +49,8 @@ export default{
     }
   },
   async fetch ({ store }) {
-      // await store.dispatch('getFruitsHits')
+      await store.dispatch('getFruitsHits')
+      await store.dispatch('getVegetablesHits')
       await store.dispatch('getArticles')
   },
   created() {
@@ -56,6 +59,9 @@ export default{
   computed: {
     fruitsHits() {
       return this.$store.state.fruitsHits
+    },
+    vegetablesHits() {
+      return this.$store.state.vegetablesHits
     },
     articles() {
       return this.$store.state.articles

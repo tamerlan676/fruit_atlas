@@ -11,21 +11,37 @@
     ul.parent-ul
       li
         nuxt-link(to="/") Главная
+      li.dropdown-item(@click="turnCatMenu()") Каталог
+        ul.child-ul(:class="{active: catDroodown}")
+          li
+            nuxt-link(to="/categories/fruits") Фрукты
+          li
+            nuxt-link(to="/categories/exotics") Экзотика
+          li
+            nuxt-link(to="/categories/vegetables") Овощи
+          li
+            nuxt-link(to="/categories/green") Зелень
+          li
+            nuxt-link(to="/categories/berries") Ягоды
+      li.dropdown-item(@click="turnCatMenu()") Услуги
+        ul.child-ul(:class="{active: catDroodown}")
+          li
+            nuxt-link(to="/uslugi/dostavka-v-ofisi/") Доставка фруктов в офисы
+          li
+            nuxt-link(to="/uslugi/dostavka-fruktov-s-fud-city/") Доставка фруктов и овощей с Фуд Сити
+          li
+            nuxt-link(to="/uslugi/dostavka-fruktov-v-kafe/") Доставка фруктов в кафе и рестораны
+          li
+            nuxt-link(to="/uslugi/dostavka-fruktov-v-magazini/") Доставка фруктов и овощей в магазины
       li
-        nuxt-link(to="/categories/fruits/") Фрукты
+        nuxt-link(to="/delivery/") Доставка
       li
-        nuxt-link(to="/categories/exotics/") Экзотика
-      li
-        nuxt-link(to="/categories/vegetables/") Овощи
-      li
-        nuxt-link(to="/categories/berries/") Ягоды
-      li
-        nuxt-link(to="/categories/green/") Зелень
-      li
-        nuxt-link(to="/categories/baskets/") Фруктовые корзины
+        nuxt-link(to="/about/") О Компании
       li
         nuxt-link(to="/contacts/") Контакты
   .mob-sm
+    .phone
+      a(href="tel:79188208097") +7 918-820-80-97 
     .cart(@click='$emit("turnCart")')
       img(width="30px" src="~/assets/images/cart.svg")
       .count(v-if="cart.length > 0") {{ totalProducts }}
@@ -138,7 +154,7 @@ export default {
     display: none;
     @media(min-width: 992px){
       display: block;
-      margin-right: 80px;
+      margin-left: 95px;
     }
     .parent-ul {
       list-style: none;
@@ -206,6 +222,17 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .phone{
+        display: none;
+      @media(min-width: 992px){
+        display: block;
+      }
+      margin-right: 50px;
+      a{
+        color: #2DBE64;
+        font-family: "EuclidMd";
+      }
+    }
     .cart{
       position: relative;
       cursor: pointer;

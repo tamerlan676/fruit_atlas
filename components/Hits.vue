@@ -1,28 +1,35 @@
 <template lang="pug">
-.hits-wrapper
-    .product(v-for="(item, key) in hits" :key="key")
-        nuxt-link.img-block(:to="`/categories/${category}/${item.id}`")
-            img.img(:src="item.acf.image" :alt="item.title.rendered")
-        .editor(v-if="cart.find(i => i.id == item.id)")
-          .editor-wrapper
-            .minus(@click="minusOne(item)") - 
-            .num {{ cart.filter(i => i.id === item.id)[0].acf.quantity_count }}
-            .plus(@click="plusOne(item)") +
-        .info 
-            .left
-                h3 {{ item.title.rendered }}
-            .right
-                .price от {{ item.acf.price }} ₽
-                    span / {{ item.acf.quantity }}{{ item.acf.unit }}. 
-                    br
-                    span.price-info Цена может меняться в зависимости от объема
-                .add-cart(@click="addToCart(item)")
-                    img(src="~/assets/images/min-cart.svg")
+.hits
+  h2 {{ title }}
+  .hits-wrapper
+      .product(v-for="(item, key) in hits" :key="key")
+          nuxt-link.img-block(:to="`/categories/${category}/${item.id}`")
+              img.img(:src="item.acf.image" :alt="item.title.rendered")
+          .editor(v-if="cart.find(i => i.id == item.id)")
+            .editor-wrapper
+              .minus(@click="minusOne(item)") - 
+              .num {{ cart.filter(i => i.id === item.id)[0].acf.quantity_count }}
+              .plus(@click="plusOne(item)") +
+          .info 
+              .left
+                  h3 {{ item.title.rendered }}
+              .right
+                  .price от {{ item.acf.price }} ₽
+                      span / {{ item.acf.quantity }}{{ item.acf.unit }}. 
+                      br
+                      span.price-info Цена может меняться в зависимости от объема
+                  .add-cart(@click="addToCart(item)")
+                      img(src="~/assets/images/min-cart.svg")
+  .buttons
+    .button
+      a(:href="link") Смотреть все
 </template>
 <script>
     export default{
       name: 'HitsComp',
       props: {
+        link: String,
+        title: String,
         hits: Array,
         category: String // Название папки внутри категории или коллекции
       },
@@ -46,6 +53,16 @@
 </script>
     
     <style lang="scss" scoped>
+    .hits{
+      padding: 80px 0 0;
+      @media(min-width: 768px){
+        padding: 120px 0 0;
+      }
+      h2{
+        text-align: center;
+        margin-bottom: 24px;
+      }
+    }
     .hits-wrapper{
         display: flex;
         overflow: auto;
@@ -194,6 +211,35 @@
             display: none;
           }
     }
+    .buttons{
+            padding: 0 24px;
+            @media(min-width: 768px){
+              display: flex;
+              width: fit-content;
+              margin: 0 auto;
+            }
+            .button{
+              @media(min-width: 768px){
+                padding: 0 10px;
+              }
+            }
+            a{
+              display: flex;
+              background: #2DBE64;
+              color: #fff;
+              width: 100%;
+              padding: 20px;
+              align-items: center;
+              justify-content: center;
+              border-radius: 10px;
+              text-transform: uppercase;
+              margin-bottom: 10px;
+              @media(min-width: 768px){
+                width: 250px;
+                margin: 0 auto;
+              }
+            }
+          }
     .root{
     transform: scale(0);
     opacity: 0;

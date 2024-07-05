@@ -22,7 +22,7 @@ const createStore = () => {
       berries: [],
       green: [],
       baskets: [],
-      fruitHits:[],
+      fruitsHits:[],
       exoticsHits: [],
       berriesHits: [],
       vegetablesHits:[],
@@ -134,7 +134,7 @@ const createStore = () => {
       setExoticsHits (state, hits) {
         state.exoticsHits = hits
       },
-      setVagetablesHits (state, hits) {
+      setVegetablesHits (state, hits) {
         state.vegetablesHits = hits
       },
       setBerriesHits (state, hits) {
@@ -199,7 +199,7 @@ const createStore = () => {
         },
         async getVegetablesHits ({ commit }) {
           const hits = await axios.get(`https://fruit-atlas.ru/admin/wp-json/wp/v2/vegetables?_embed&per_page=100`)
-          commit('setVagetablesHits', hits.data.filter((item) => { return item.acf.hit === true }))
+          commit('setVegetablesHits', hits.data.filter((item) => { return item.acf.hit === true }))
         },
         async getBerriesHits ({ commit }) {
           const hits = await axios.get(`https://fruit-atlas.ru/admin/wp-json/wp/v2/berries?_embed&per_page=100`)

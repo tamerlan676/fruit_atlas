@@ -29,6 +29,7 @@
         .text(@click="addToCart(getItem)") 
             img(src="~/assets/images/min-cart-btn.svg")
             p В корзину
+    Hits(:hits="fruitsHits" category="fruits" title="Рекомендуемые фрукты" link="https://fruit-atlas.ru/categories/fruits")
     Reviews
     Banner(:title="bannerTitle" :desc="bannerDesc" :img="bannerImg")
 </template>
@@ -69,7 +70,8 @@
       },
       async fetch ({ store }) {
           await store.dispatch('getFruits')
-    },
+          await store.dispatch('getFruitsHits')
+      },
       head(){
             return {
               title: this.getItem.acf.seo_title,
@@ -83,7 +85,10 @@
       computed: {
         getItem() {
           return this.$store.state.fruits.filter(item => item.id === +this.$route.params.id)[0]
-        }
+        },
+        fruitsHits() {
+          return this.$store.state.fruitsHits
+        },
       },
       methods: {
         addToCart(product) {

@@ -10,6 +10,8 @@
                 ul.child-ul(:class="{ active: item.sub }")
                     li(v-for="subitem in item.subitems" @click="turnMenu")
                         nuxt-link(:to="subitem.link") {{ subitem.title }}
+        .phone-sm
+          a(href="tel:79188208097") +7 918-820-80-97 
     CartPanel(:class="{active: cartActive}" @turnCart="turnCart")
     Nuxt
     Footer
@@ -30,6 +32,11 @@ export default{
                 link: '/',
               },
               {
+                title: 'Каталог',
+                link: '#',
+                sub: false,
+                subitems: [
+                {
                 title: 'Фрукты',
                 link: '/categories/fruits'
               },
@@ -52,6 +59,30 @@ export default{
               {
                 title: 'Фруктовые корзины',
                 link: '/categories/baskets'
+              },]
+              },
+              {
+                title: 'Услуги',
+                link: '#',
+                sub: false,
+                subitems: [
+                  {
+                  title: 'Доставка фруктов в офисы',
+                  link: '/uslugi/dostavka-v-ofisi'
+                  },
+                  {
+                  title: 'Доставка фруктов и овощей с рынка Фуд Сити',
+                  link: '/uslugi/dostavka-fruktov-s-fud-city/'
+                  },
+                  {
+                  title: 'Доставка фруктов в кафе и рестораны',
+                  link: '/uslugi/dostavka-fruktov-v-kafe/'
+                  },
+                  {
+                  title: 'Доставка фруктов и овощей в магазины',
+                  link: '/uslugi/dostavka-fruktov-v-magazini/'
+                  },
+                ]
               },
               {
                 title: 'О Компании',
@@ -151,6 +182,14 @@ export default{
                   transform: rotate(-90deg);
                 }
               }
+            }
+          }
+          .phone-sm{
+            padding: 16px;
+            a{
+              font-size: 20px;
+              font-family: "EuclidMd";
+              color: #2DBE64
             }
           }
           .child-ul{

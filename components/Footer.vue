@@ -48,6 +48,10 @@ export default{
                     href: '/categories/exotics/'
                 },
                 {
+                    title: 'Ягоды',
+                    href: '/categories/berries/'
+                },
+                {
                     title: 'Овощи',
                     href: '/categories/vegetables/'
                 },
@@ -58,25 +62,22 @@ export default{
             ],
             menu_2: [
                 {
-                    title: 'Доставка Фруктов',
-                    href: '/categories/fruits/'
+                    title: 'Доставка фруктов в офисы',
+                    href: '/uslugi/dostavka-fruktov-v-ofisi/'
                 },
                 {
-                    title: 'Доставка экзотики',
-                    href: '/categories/exotics/'
+                    title: 'Доставка фруктов и овощей с рынка Фуд Сити',
+                    href: '/uslugi/dostavka-fruktov-v-ofisi/'
                 },
                 {
-                    title: 'Доставка Овощей',
-                    href: '/vegetables/'
+                    title: 'Доставка фруктов в кафе и рестораны',
+                    href: '/uslugi/dostavka-fruktov-v-kafe/'
                 },
                 {
-                    title: 'Доставка Фруктовых корзин',
-                    href: '/baskets/'
+                    title: 'Доставка фруктов и овощей в магазины',
+                    href: '/uslugi/dostavka-fruktov-v-magazini/'
                 },
-                {
-                    title: 'Доставка Зелени',
-                    href: '/categories/green/'
-                },
+
             ],
             menu_3: [
                 {

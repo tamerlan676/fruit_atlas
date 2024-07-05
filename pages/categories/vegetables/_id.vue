@@ -29,6 +29,8 @@
         .text(@click="addToCart(getItem)") 
             img(src="~/assets/images/min-cart-btn.svg")
             p В корзину
+    Hits(:hits="vegetablesHits" category="vegetables" title="Сезонные овощи" link="https://fruit-atlas.ru/categories/vegetables")
+    .divider
 </template>
       
       <script>
@@ -64,6 +66,7 @@
         },
         async fetch ({ store }) {
             await store.dispatch('getVegetables')
+            await store.dispatch('getVegetablesHits')
           },
             head(){
               return {
@@ -78,8 +81,11 @@
         computed: {
           getItem() {
             return this.$store.state.vegetables.filter(item => item.id === +this.$route.params.id)[0]
-          }
-        },
+          },
+          vegetablesHits() {
+            return this.$store.state.vegetablesHits
+          },
+            },
         methods: {
           addToCart(product) {
             this.$store.commit('addToCart', product);
@@ -280,6 +286,9 @@
                 img{
                     margin-right: 10px;
                 }
-      }
+          }
+          .divider{
+            height: 80px;
+          }
       }
       </style>

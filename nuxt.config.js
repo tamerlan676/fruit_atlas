@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: '▷ Доставка свежих фруктов на дом в Москве',
+    title: '▷ Доставка фруктов и овощей на дом в Москве',
     htmlAttrs: {
       lang: 'en',
     },

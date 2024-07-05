@@ -6,6 +6,8 @@
       .buttons
         .button
           button(@click="$nuxt.$emit('showPopup', true)") Заказать звонок
+        .button 
+          nuxt-link(to="/katalog/") Перейти в каталог
         //- .button
         //-   button(@click="showPopup") Получить прайс
         
@@ -82,10 +84,11 @@
                 padding: 0 10px;
               }
             }
-            button{
+            button, a{
               display: flex;
               background: #2DBE64;
               color: #fff;
+              font-size: 14px;
               width: 100%;
               padding: 20px;
               align-items: center;
