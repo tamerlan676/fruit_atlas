@@ -7,7 +7,7 @@
             h1 Заказать {{ getItem.title.rendered }} с доставкой
             p.description {{ getItem.acf.description }}
             .price-weight 
-                .price {{ getItem.acf.price }} ₽
+                .price {{ getItem.acf.price }} руб
                 .weight / {{ getItem.acf.quantity }} {{ getItem.acf.unit }}
             .message-about-change 
               img(src="~/assets/images/weight.svg" height="20px") 

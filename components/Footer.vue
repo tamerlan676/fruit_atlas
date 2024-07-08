@@ -63,11 +63,11 @@ export default{
             menu_2: [
                 {
                     title: 'Доставка фруктов в офисы',
-                    href: '/uslugi/dostavka-fruktov-v-ofisi/'
+                    href: '/uslugi/dostavka-v-ofisi/'
                 },
                 {
                     title: 'Доставка фруктов и овощей с рынка Фуд Сити',
-                    href: '/uslugi/dostavka-fruktov-v-ofisi/'
+                    href: '/uslugi/dostavka-fruktov-s-fud-city/'
                 },
                 {
                     title: 'Доставка фруктов в кафе и рестораны',

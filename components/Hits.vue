@@ -14,7 +14,7 @@
               .left
                   h3 {{ item.title.rendered }}
               .right
-                  .price от {{ item.acf.price }} ₽
+                  .price от {{ item.acf.price }} руб
                       span / {{ item.acf.quantity }}{{ item.acf.unit }}. 
                       br
                       span.price-info Цена может меняться в зависимости от объема

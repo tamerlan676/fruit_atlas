@@ -1,16 +1,16 @@
 <template lang="pug">
-  .main 
-      HeroCenter(:title="heroTitle" :desc="heroDesc" :img="img" @showPopup="showPopup")
-      Chess(:title="chessTitle" :desc="chessDesc" :chessList="chessList")
-      Banner(:title="bannerTitle" :desc="bannerDesc" :img="bannerImg")
-      .divider
-      Numbers
-      Reviews
-      Questions
-      BannerBonus
-      Articles(:articles="articles")
-      Popup(:showPopup="showPopup" @showPopup="showPopup")
-  </template>
+.main 
+    HeroCenter(:title="heroTitle" :desc="heroDesc" :img="img" @showPopup="showPopup")
+    Chess(:title="chessTitle" :desc="chessDesc" :chessList="chessList")
+    Banner(:title="bannerTitle" :desc="bannerDesc" :img="bannerImg")
+    .divider
+    Numbers
+    Reviews
+    Questions
+    BannerBonus
+    Articles(:articles="articles")
+    Popup(:showPopup="showPopup" @showPopup="showPopup")
+</template>
       
       <script>
       export default{

@@ -3,7 +3,7 @@ div
     .content
         h1 О нашей компании
         p(v-html="text") {{ text }} 
-    Chess(:title="chessTitle" :desc="chessDesc" :chessList="chessList")
+    Numbers
     Banner(:title="bannerTitle" :desc="bannerDesc" :img="bannerImg")
 </template>
 

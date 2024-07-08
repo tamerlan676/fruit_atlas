@@ -12,7 +12,7 @@
             .left
                 h3 {{ item.title.rendered }}
             .right
-                .price от {{ item.acf.price }} ₽
+                .price от {{ item.acf.price }} руб
                     span / {{ item.acf.quantity }}{{ item.acf.unit }}
                     span.price-info Цена может меняться в зависимости от объема
             button.add-cart(@click="addToCart(item)") в корзину
