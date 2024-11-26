@@ -19,77 +19,6 @@
 export default{
   data() {
     return {
-       script: [
-        {
-          type: 'application/ld+json',
-          json: {
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Fruit Atlas",
-            "image": "https://fruit-atlas.ru/logo.png",
-            "url": "fruit-atlas.ru",
-            "description": "Доставка свежих фруктов и овощей в Москве. Fruit Atlas — быстрая доставка, качественные продукты. Оплата при получении.",
-            "telephone": "+7 (918) 820-80-97",
-            "openingHoursSpecification": [
-              {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                "opens": "09:00",
-                "closes": "18:00"
-              },
-              {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": "Saturday",
-                "opens": "10:00",
-                "closes": "16:00"
-              }
-            ]
-          }
-        },
-        {
-          type: "application/ld+json",
-          json: {
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            "name": "Меню доставки фруктов",
-            "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "О Нас",
-                "url": "https://fruit-atlas.ru/about"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Фрукты",
-                "url": "https://fruit-atlas.ru/categories/fruits"
-              },
-              {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Овощи",
-                "url": "https://fruit-atlas.ru/categories/vegetables"
-              },
-              {
-                "@type": "ListItem",
-                "position": 4,
-                "name": "Экзотические фрукты",
-                "url": "https://fruit-atlas.ru/categories/vegetables"
-              },
-              {
-                "@type": "ListItem",
-                "position": 5,
-                "name": "Контакты",
-                "url": "https://fruit-atlas.ru/contacts"
-              },
-              {
-                "@type": "ListItem",
-                "position":6,
-                "name": "Доставка",
-                "url": "https://fruit-atlas.ru/delivery"
-              }
-      ],
       heroTitle: `Доставка фруктов и овощей по Москве`,
       heroDesc: `Мы предлагаем быструю и удобную доставку свежих фруктов, прямо к вашему порогу. <br>Свяжитесь с нами и мы раскажем вам все подробности`,
       chessTitle: 'Преимущества при работе с нами',
@@ -119,50 +48,50 @@ export default{
       showPopup: false
         }
       },
-      {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-  {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "О Нас",
-                "url": "https://fruit-atlas.ru/about"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Фрукты",
-                "url": "https://fruit-atlas.ru/categories/fruits"
-              },
-              {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Овощи",
-                "url": "https://fruit-atlas.ru/categories/vegetables"
-              },
-              {
-                "@type": "ListItem",
-                "position": 4,
-                "name": "Экзотические фрукты",
-                "url": "https://fruit-atlas.ru/categories/vegetables"
-              },
-              {
-                "@type": "ListItem",
-                "position": 5,
-                "name": "Контакты",
-                "url": "https://fruit-atlas.ru/contacts"
-              },
-              {
-                "@type": "ListItem",
-                "position":6,
-                "name": "Доставка",
-                "url": "https://fruit-atlas.ru/delivery"
-              }
-  ]
-}
+  head () {
+    return {
+      script: [
+                {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Fruit Atlas",
+            "url": "https://fruit-atlas.ru",
+            "logo": "https://fruit-atlas.ru/logo.png",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+7 918 820 80 97",
+              "contactType": "customer service",
+              "areaServed": "RU",
+              "availableLanguage": "ru"
+            }
+          },
+          {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Главная",
+              "item": "https://fruit-atlas.ru"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "О Нас",
+              "item": "https://fruit-atlas.ru/about"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Доставка",
+              "item": "https://fruit-atlas.ru/delivery"
+            }
+          ]
+        }
       ]
     }
+
   },
   async fetch ({ store }) {
       await store.dispatch('getFruitsHits')
