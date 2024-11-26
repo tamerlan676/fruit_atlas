@@ -7,7 +7,7 @@ section.reviews
                 .name {{ review.name }}
             .main
                 img.circle(:src="review.img" @click="index = i")
-                .text {{ review.text }}
+                p.text {{ review.text }}
     </template>
     
     <script>
