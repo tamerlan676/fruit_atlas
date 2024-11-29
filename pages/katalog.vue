@@ -11,6 +11,14 @@ export default{
     name: 'Katalog',
     head(){
         return {
+          head: {
+              link: [
+                {
+                  rel: 'canonical',
+                  href: 'https://fruit-atlas.ru/katalog'
+                }
+              ]
+          },
           title: 'Каталог товаров. Фрукты, овощи, ягоды, зелень',
           meta: [
             { charset: 'utf-8' },

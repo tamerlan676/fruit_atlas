@@ -62,6 +62,14 @@
               content: 'Заказывайте фрукты в нашем интернет магазине. Мы обеспечим быструю и удобную доставку. Только спелые и качественный фрукты'
             }
           ],
+          head: {
+            link: [
+              {
+                rel: 'canonical',
+                href: 'https://fruit-atlas.ru/categories/fruits'
+              }
+            ]
+          },
         }
       },
       created() {

@@ -48,50 +48,13 @@ export default{
       showPopup: false
         }
       },
-  head () {
-    return {
-      script: [
-                {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Fruit Atlas",
-            "url": "https://fruit-atlas.ru",
-            "logo": "https://fruit-atlas.ru/logo.png",
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+7 918 820 80 97",
-              "contactType": "customer service",
-              "areaServed": "RU",
-              "availableLanguage": "ru"
-            }
-          },
-          {
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Главная",
-              "item": "https://fruit-atlas.ru"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "О Нас",
-              "item": "https://fruit-atlas.ru/about"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": "Доставка",
-              "item": "https://fruit-atlas.ru/delivery"
-            }
-          ]
-        }
-      ]
-    }
-
+      head: {
+    link: [
+      {
+        rel: 'canonical',
+        href: 'https://fruit-atlas.ru'
+      }
+    ]
   },
   async fetch ({ store }) {
       await store.dispatch('getFruitsHits')
