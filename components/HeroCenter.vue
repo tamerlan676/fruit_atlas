@@ -5,7 +5,7 @@
       p.desc(v-html="desc") {{ desc }}
       .buttons
         .button
-          button(@click="$nuxt.$emit('showPopup', true)") Заказать звонок
+           a(href="https://wa.me/79188208097" target="_blank") Заказ в WhatsApp
         .button 
           nuxt-link(to="/katalog/") Перейти в каталог
         //- .button

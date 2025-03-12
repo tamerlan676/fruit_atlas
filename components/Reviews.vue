@@ -8,6 +8,7 @@ section.reviews
             .main
                 img.circle(:src="review.img" @click="index = i")
                 p.text {{ review.text }}
+    a.real-review(href="https://www.avito.ru/moskva/produkty_pitaniya/dostavka_ovoschey_i_fruktov_s_fud_siti_3382360582#open-reviews-list" target="_blank") Убедиться в реальности отзывов
     </template>
     
     <script>
@@ -15,7 +16,7 @@ section.reviews
         name: 'ReviewsComp',
       data() {
         return {
-            title: `Отзывы довольных клиентов:`,
+            title: `Уже 500+ заказов доставлено:`,
           reviews: [ 
             {
                 img: require("~/assets/images/persons/1.jpg"),
@@ -110,6 +111,20 @@ section.reviews
                 }
             }
         }
+        .real-review{
+                width: fit-content;
+                padding: 20px;
+                height: 40px;
+                border-radius: 10px;
+                margin: 0 auto;
+                color: #fff;
+                background: #8ed081;
+                display: flex;
+                align-items: center;
+                text-transform: uppercase;
+                font-weight: 600;
+                justify-content: center;
+            }
         .transp-btn{
             border: 1px solid #000;
             color: #000;

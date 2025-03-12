@@ -14,12 +14,13 @@
               .left
                   h3 {{ item.title.rendered }}
               .right
-                  .price от {{ item.acf.price }} руб
+                  .price {{ item.acf.price }} руб
                       span / {{ item.acf.quantity }}{{ item.acf.unit }}. 
                       br
                       span.price-info Цена может меняться в зависимости от объема
-                  .add-cart(@click="addToCart(item)")
-                      img(src="~/assets/images/min-cart.svg")
+              .add-cart(@click="addToCart(item)"  :class="{'added-to-cart': cart.find(i => i.id == item.id)}") 
+                span(v-if="cart.find(i => i.id == item.id)") добавлено
+                span(v-else) в корзину
   .buttons
     .button
       a(:href="link") Смотреть все
@@ -35,13 +36,13 @@
       },
       computed: {
         cart() {
-        return this.$store.state.cart
-      },
+          return this.$store.state.cart
+        },
       },
       methods: {
       addToCart(product) {
         this.$store.commit('addToCart', product)
-          },
+        },
       plusOne(product){
         this.$store.commit('plusOne', product)
           }, 
@@ -91,6 +92,26 @@
         @media(min-width: 768px){
           margin-right: 0;
           width: 100%;
+        }
+        .add-cart{
+                width: 100%;
+                height: 40px;
+                border-radius: 10px;
+                color: #fff;
+                padding: 5px;
+                background: #8ed081;
+                display: flex;
+                align-items: center;
+                text-transform: uppercase;
+                font-weight: 600;
+                justify-content: center;
+                cursor: pointer;
+                &:active{
+                  background: #000;
+                }
+              }
+        .added-to-cart{
+          background: rgb(112, 144, 111);
         }
         .editor{
           width: 100%;
@@ -167,36 +188,19 @@
               color: grey
             }
             .right{
-              text-align: left;
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
               .price{
                 font-weight: 500;
                 font-size: 16px;
                 color: #499167;
                 span{
                     font-size: 13px;
-                    color: grey
+                    color: rgb(128, 128, 128)
                 }
                 .price-info{
                   display: block;
                   margin-top: 10px;
-                  width: 130px;
+                  margin-bottom: 20px;
                   font-size: 10px;
-                }
-              }
-              .add-cart{
-                width: 36px;
-                height: 36px;
-                border-radius: 100%;
-                background: #8ed081;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-                img{
-                   height: 20px;
                 }
               }
             }

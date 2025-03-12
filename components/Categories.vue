@@ -19,11 +19,6 @@ export default {
           img: require('~/assets/images/fruits.png')
         },
         {
-          title: 'Экзотика',
-          link: '/categories/exotics',
-          img: require('~/assets/images/exotic-circle.png')
-        },
-        {
           title: 'Овощи',
           link: '/categories/vegetables',
           img: require('~/assets/images/vegetables.png')
@@ -37,22 +32,7 @@ export default {
           title: ' Ягоды',
           link: '/categories/berries',
           img: require('~/assets/images/berries.png')
-        },
-        {
-          title: 'Сухофрукты',
-          link: '#',
-          img: require('~/assets/images/suhofrukti.png')
-        },
-        {
-          title: 'Орехи',
-          link: '#',
-          img: require('~/assets/images/nuts.png')
-        },
-        {
-          title: 'Соки',
-          link: '#',
-          img: require('~/assets/images/juces.png')
-        },
+        }
       ]
 
     }

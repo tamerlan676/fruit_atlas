@@ -2,13 +2,13 @@
 .main 
   HeroCenter(:title="heroTitle" :desc="heroDesc" :img="img" @showPopup="showPopup")
   Categories
-  Chess(:title="chessTitle" :desc="chessDesc" :chessList="chessList")
+  Reviews
   Hits(:hits="fruitsHits" category="fruits" title="Сезонные фрукты" link="https://fruit-atlas.ru/categories/fruits")
   Hits(:hits="vegetablesHits" category="vegetables" title="Сезонные овощи" link="https://fruit-atlas.ru/categories/vegetables")
+  Chess(:title="chessTitle" :desc="chessDesc" :chessList="chessList")
   .divider
   Banner(:title="bannerTitle" :desc="bannerDesc" :img="bannerImg")
   Numbers
-  Reviews
   Questions
   BannerBonus
   Articles(:articles="articles")
@@ -20,22 +20,22 @@ export default{
   data() {
     return {
       heroTitle: `Доставка фруктов и овощей по Москве`,
-      heroDesc: `Мы предлагаем быструю и удобную доставку свежих фруктов, прямо к вашему порогу. <br>Свяжитесь с нами и мы раскажем вам все подробности`,
+      heroDesc: `Прямо с рынка к вам домой – без посредников и лишних накруток<br>Свяжитесь с нами и мы раскажем вам все подробности`,
       chessTitle: 'Преимущества при работе с нами',
       chessDesc: 'Мы стремимся работать так, чтобы к нам возвращались снова и снова',
       chessList: [
         {
-          title: 'Безупречное качество',
+          title: 'Свежие продукты – отбор лучших товаров с рынка',
           desc: 'Мы тщательно отбираем свежие фрукты и овощи у надежных поставщиков, чтобы убедиться, что каждая посылка, доставленная к вам, соответствует нашим высоким стандартам качества.',
           img: require('~/assets/images/qual.jpg')
         },
         {
-          title: 'Быстрая и удобная доставка',
+          title: 'Удобная доставка – от рынка прямо к вам домой',
           desc: 'Мы стараемся организовать  быструю и надежную доставку прямо к вашей двери. Независимо от вашего местоположения, вы можете быть уверены, что ваши продукты будут доставлены вовремя.',
           img: require('~/assets/images/del.jpg')
         },
         {
-          title: 'Широкий ассортимент',
+          title: 'Оптовые и розничные заказы – для семей и бизнеса',
           desc: 'Мы предлагаем широкий выбор фруктов и овощей, чтобы удовлетворить любой вкус и предпочтение. От классических и сезонных продуктов до экзотических фруктов и овощей - у нас есть все, что вам нужно',
           img: require('~/assets/images/assort.jpg')
         },
@@ -49,13 +49,13 @@ export default{
         }
       },
       head: {
-    link: [
-      {
-        rel: 'canonical',
-        href: 'https://fruit-atlas.ru'
-      }
-    ]
-  },
+        link: [
+          {
+            rel: 'canonical',
+            href: 'https://fruit-atlas.ru'
+          }
+        ]
+    },
   async fetch ({ store }) {
       await store.dispatch('getFruitsHits')
       await store.dispatch('getVegetablesHits')

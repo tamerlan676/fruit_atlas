@@ -30,7 +30,7 @@
             img(style="height: 50px;" src="~/assets/images/tlg.svg")
         a(href="https://wa.me/79188208097" target="_blank")
             img(style="height: 50px;" src="~/assets/images/wts.svg")
-    .copyright © 2024. Все права защищены
+    .copyright © 2025. Все права защищены
 </template>
 
 <script>

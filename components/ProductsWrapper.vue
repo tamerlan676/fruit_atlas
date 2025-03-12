@@ -15,7 +15,9 @@
                 .price от {{ item.acf.price }} руб
                     span / {{ item.acf.quantity }}{{ item.acf.unit }}
                     span.price-info Цена может меняться в зависимости от объема
-            button.add-cart(@click="addToCart(item)") в корзину
+            .add-cart(@click="addToCart(item)"  :class="{'added-to-cart': cart.find(i => i.id == item.id)}") 
+                span(v-if="cart.find(i => i.id == item.id)") добавлено
+                span(v-else) в корзину
 </template>
     
 <script>
@@ -23,7 +25,7 @@
     name: 'ProductsWrapper',
     props: {
       products: Array,
-      folder: String, // Переменная папки. Либо категории (categories) либо коллекции (collections)
+      folder: String, // Переменная папки. Либо категории (categories) 
       category: String // Название папки внутри категории или коллекции
     },
     computed: {
@@ -184,6 +186,9 @@
                 height: 40px;
                 color: #fff;
                 text-transform: uppercase;
+              }
+              .added-to-cart{
+                background: rgb(112, 144, 111);
               }
           }
           &:hover{
