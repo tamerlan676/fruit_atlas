@@ -5,12 +5,12 @@
   Reviews
   Hits(:hits="fruitsHits" category="fruits" title="Сезонные фрукты" link="https://fruit-atlas.ru/categories/fruits")
   Hits(:hits="vegetablesHits" category="vegetables" title="Сезонные овощи" link="https://fruit-atlas.ru/categories/vegetables")
+  .divider
   Chess(:title="chessTitle" :desc="chessDesc" :chessList="chessList")
   .divider
   Banner(:title="bannerTitle" :desc="bannerDesc" :img="bannerImg")
   Numbers
   Questions
-  BannerBonus
   Articles(:articles="articles")
   Popup(:showPopup="showPopup" @showPopup="showPopup")
 </template>

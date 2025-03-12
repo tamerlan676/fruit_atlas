@@ -114,8 +114,9 @@ section.reviews
         .real-review{
                 width: fit-content;
                 padding: 20px;
-                height: 40px;
+                height: 60px;
                 border-radius: 10px;
+                text-align: center;
                 margin: 0 auto;
                 color: #fff;
                 background: #8ed081;

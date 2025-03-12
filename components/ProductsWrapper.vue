@@ -1,6 +1,6 @@
 <template lang="pug">
 .products-wrapper 
-    .product(v-for="(item, key) in products" :key="key" class="root")
+    .product(v-for="(item, key) in products" :key="key")
         nuxt-link.img-block(:to="`/${folder}/${category}/${item.id}`")
             img.img(:src="item.acf.image" :alt="item.title.rendered")
         .editor(v-if="cart.find(i => i.id == item.id)")
@@ -33,16 +33,6 @@
         return this.$store.state.cart
       },
     },
-    mounted () {
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('active')
-              }
-            })
-          })
-          document.querySelectorAll('.root').forEach((block) => { observer.observe(block) })
-  },
     methods: {
       addToCart(product) {
         this.$store.commit('addToCart', product)
