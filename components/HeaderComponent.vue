@@ -16,8 +16,6 @@
           li
             nuxt-link(to="/categories/fruits") Фрукты
           li
-            nuxt-link(to="/categories/exotics") Экзотика
-          li
             nuxt-link(to="/categories/vegetables") Овощи
           li
             nuxt-link(to="/categories/green") Зелень

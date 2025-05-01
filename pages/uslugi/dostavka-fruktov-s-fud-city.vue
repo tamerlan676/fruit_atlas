@@ -1,6 +1,8 @@
 <template lang="pug">
 .main 
-    HeroCenter(:title="heroTitle" :desc="heroDesc" :img="img" @showPopup="showPopup")
+    HeroNoBtn(:title="heroTitle" :desc="heroDesc" :img="img" @showPopup="showPopup")
+    .divider
+    Scheme
     Chess(:title="chessTitle" :desc="chessDesc" :chessList="chessList")
     .divider
     Banner(:title="bannerTitle" :desc="bannerDesc" :img="bannerImg")
@@ -45,7 +47,7 @@
           bannerTitle: 'Как сделать заказ?',
           bannerDesc: 'Просто позвоните нам по телефону или оставьте заявку на сайте. Менеджер свяжется с вами, уточнит все детали и предложит лучшие условия сотрудничества. Мы открыты для диалога и готовы обсуждать индивидуальные пожелания.',
           bannerImg: require('~/assets/images/banner.png'),
-          img: require('~/assets/images/hero.jpg'),
+          img: require('~/assets/images/fc-hero.png'),
           showPopup: false
         }
       },
