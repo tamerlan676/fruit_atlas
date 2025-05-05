@@ -1,6 +1,7 @@
 <template lang="pug">
 .main 
   HeroCenter(:title="heroTitle" :desc="heroDesc" :img="img" @showPopup="showPopup")
+  Scheme
   Categories
   Reviews
   Hits(:hits="fruitsHits" category="fruits" title="Сезонные фрукты" link="https://fruit-atlas.ru/categories/fruits")

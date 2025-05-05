@@ -1,6 +1,7 @@
 <template lang="pug">
 .main 
     HeroCenter(:title="heroTitle" :desc="heroDesc" :img="img" @showPopup="showPopup")
+    Scheme
     Chess(:title="chessTitle" :desc="chessDesc" :chessList="chessList")
     .divider
     Banner(:title="bannerTitle" :desc="bannerDesc" :img="bannerImg")
