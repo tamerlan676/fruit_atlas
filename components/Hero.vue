@@ -2,15 +2,20 @@
 .hero
     .wrapper
         .left
+            .avito 
+              a(href="#")
+                img(src="~/assets/images/avito.svg")
             h1 {{ title }}
             p.md {{ desc }}
-            .buttons.md
-                nuxt-link.orange-btn(:to="{ path: '/', hash:'#categories'}") Хочу попробовать
+            a.btn(href="https://wa.me/79188208097")
+              span Написать сборщику
+              img(src="~/assets/images/wts-white.svg") 
+            .benefits 
+              .benefit(v-for="benefit in benefits" :key="benefit") 
+                img(src="~/assets/images/gr-done.svg")
+                .txt {{ benefit }}
         .right
-            img(src="~/assets/images/hero.jpg")
-            p.xs Закажите фрукты или овощи которые порадуют вас вкусом и качеством
-    .buttons.xs
-        nuxt-link.orange-btn(:to="{ path: '/', hash:'#categories'}") Хочу попробовать
+            img(src="~/assets/images/green-t.png")
     .arrow
         //- img(src="~/assets/images/arrow.svg")
     </template>
@@ -24,7 +29,8 @@
                 default: false
               },
               title: String,
-              desc: String
+              desc: String,
+              benefits: Array
           },
           data() {
             return{
@@ -58,20 +64,77 @@
         .hero{
           z-index: 2;
           position: relative;
+          background: #770061;
           @media(min-width: 992px){
-            height: calc(100vh - 80px);
           }
           .wrapper{
-              padding: 24px 24px 24px;
+              padding: 24px 24px 0;
                @media(min-width: 992px){
-                  display: flex;
-                  width: 1120px;
-                  padding: 60px 0;
+                  display: grid;
+                  grid-template-columns: 1fr 1fr;
                   margin: 0 auto;
-                  align-items: center;
+                  padding: 80px 24px 0;
+                @media(min-width: 1200px){
+                  width: 1100px;
+                  margin: 0 auto;
+                  padding: 120px 0 0;
+                }
+            }
+            .left{
+              h1{
+                color: #fff;
+                font-size: 24px;
+                line-height: 30px;
+                text-align: center;
+                margin-bottom: 24px;
+                @media(min-width: 992px){
+                  font-size: 35px;
+                  margin-bottom: 16px;
+                  text-align: left;
+                  line-height: 40px;
+                }
+              }
+            img{
+              max-width: 100%;
+            }
+          .md{
+            margin-bottom: 24px;
+            font-size: 16px;
+            text-align: center;
+            color: #fff;
+            @media(min-width: 992px){
+              text-align: left;
+          }
+          }
+          .btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            border-radius: 15px;
+            height: 50px;
+            width: fit-content;
+            color: #fff;
+            margin: 0 auto 24px;
+            background: linear-gradient(#D198E5, #C856F0);
+            @media(min-width: 992px){
+              justify-content: start;
+              margin: 0 0 24px;
+            }
+            @media(min-width: 1200px){
+              margin-bottom: 40px;
+            }
+            span{
+              margin-right: 8px;
+            }
+          }
+
             }
             .right{
               position: relative;
+              img{
+                max-width: 100%;
+              }
               .heart{
                 position: absolute;
                 left: 50px;
@@ -136,75 +199,41 @@
               }
             }
           }
-          h1{
-            color: #000;
-            font-size: 32px;
-            line-height: 40px;
-            @media(min-width: 1200px){
-              font-size: 35px;
-              margin-bottom: 16px;
+          .avito{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @media(min-width: 992px){
+              justify-content: start;
+              margin-bottom: 24px;
+            }
+            
+            img{
+              width: 100px;
             }
           }
-          img{
-            max-width: 100%;
-          }
-          .md{
-            margin-bottom: 16px;
-            font-size: 16px;
-            display: none;
-            @media(min-width: 990px){
-              display: block;
+
+          .benefits{
+            display: grid;
+            grid-gap: 5px;
+            width: fit-content;
+            margin: 0 auto 24px;
+            @media(min-width: 768px){
+              grid-gap: 16px;
+              grid-template-columns: 1fr 1fr;
+              margin: 0 auto 40px;
             }
-          }
-          .xs{
-              display: block;
-            @media(min-width: 990px){
-              display: none;
+            @media(min-width: 992px){
+              margin: 0;
+            }
+            .benefit{
+              display: flex;
               align-items: center;
-              justify-content: center;
-            }
-          }
-          .buttons{
-            position: relative;
-            width: 100%;
-            &.xs{
-              display: block;
-              padding: 0 24px;
-              @media(min-width: 992px){
-                display: none;
+              color: #fff;
+              img{
+                margin-right: 8px;
               }
             }
-            &.md{
-              display: none;
-              @media(min-width: 992px){
-                display: flex;
-                a{
-                  margin-right: 16px;
-                }
-              }
-            }
-            .arrow{
-                position: absolute;
-                right: 10px;
-                top: 10px;
-                transform: rotate(120deg);
-                animation: 1s infinite alternate down;
-                img{
-                  width: 50px;
-                  opacity: 0.8;
-                }
-              }
-              a{
-                width: 250px;
-              }
-              @keyframes down {
-                from{
-                  top: 10px
-                }
-                to{
-                  top: 30px
-                }
-              }
           }
         }
         </style>

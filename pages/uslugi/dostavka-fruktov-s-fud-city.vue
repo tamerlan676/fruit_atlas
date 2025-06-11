@@ -1,15 +1,13 @@
 <template lang="pug">
 .main 
-    HeroNoBtn(:title="heroTitle" :desc="heroDesc" :img="img" @showPopup="showPopup")
-    .divider
-    Scheme
+    Hero(:title="heroTitle" :desc="heroDesc" :img="img" @showPopup="showPopup" :benefits="benefits")
+    TheImportant(:importantList="importantList")
     Chess(:title="chessTitle" :desc="chessDesc" :chessList="chessList")
     .divider
     Banner(:title="bannerTitle" :desc="bannerDesc" :img="bannerImg")
     Numbers
     Reviews
     Questions
-    BannerBonus
     Articles(:articles="articles")
     Popup(:showPopup="showPopup" @showPopup="showPopup")
 </template>
@@ -18,8 +16,35 @@
     export default{
       data() {
         return {
-          heroTitle: `Доставка фруктов и овощей с рынка Фуд Сити`,
-          heroDesc: `Мы предлагаем доставку фруктов и овощей с рынка Фуд Сити прямо к вашему порогу. <br>Свяжитесь с нами и мы раскажем вам все подробности`,
+          heroTitle: `Доставка фруктов и овощей с рынка Фуд Сити по Москве и области`,
+          heroDesc: `Организуем для вас доставку с рынка по любому вашему запросу.`,
+          benefits: ['Контроль качества', 'Удобная доставка', 'Рыночные цены', 'Широкий ассортимент', 'Опт и розница', 'Рыночные цены'],
+          importantList: [
+            {
+              title: 'Стоимость заказа',
+              subtitle: 'Свежие фрукты и овощи по рыночным ценам!',
+              desc: 'Мы закупаем для вас только товары по рыночным ценам. За сбор и доставку мы добавляем всего 10% к стоимости заказа. Экономьте время, пока мы заботимся о свежести!',
+              green: '10% от суммы'
+            },
+            {
+              title: 'Доставка заказа',
+              subtitle: 'Удобная доставка прямо к вам!',
+              desc: 'Мы доставим ваш заказ через Яндекс Go — быстро и надежно! Стоимость доставки легко уточнить: просто укажите адрес от рынка Фуд Сити в приложении Яндекс Go или отправьте его нам — мы рассчитаем всё за вас',
+              green: 'Яндекс Go'
+            },
+            {
+              title: 'Минимальный заказ',
+              subtitle: 'Ваш идеальный заказ от 15 000 рублей!',
+              desc: 'Только отборные продукты, собранные всё в одном заказе! За 15 000 рублей вы получаете максимальную свежесть и удобную доставку без задержек.',
+              green: 'от 15 000 руб'
+            },
+            {
+              title: 'Оплата заказа',
+              subtitle: 'Платите с уверенностью!',
+              desc: 'Оплачивайте заказ при получении, только после того, как убедитесь в свежести и качестве продуктов. Мы заботимся, чтобы вы остались довольны каждой покупкой!',
+              green: 'По факту'
+            },
+          ],
           chessTitle: 'Почему мы?',
           chessList: [
             {

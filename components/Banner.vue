@@ -64,7 +64,7 @@ export default{
             }
             button, .btn{
               display: flex;
-              background: #2DBE64;
+              background: linear-gradient(#D198E5, #C856F0);
               color: #fff;
               width: 100%;
               padding: 20px;

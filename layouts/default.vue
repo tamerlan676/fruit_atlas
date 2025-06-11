@@ -15,11 +15,11 @@
     CartPanel(:class="{active: cartActive}" @turnCart="turnCart")
     Nuxt
     Footer
-    .floating-call-btn 
-      a.fl-btn(href="https://wa.me/79188208097")
-        .text(v-html="btn") {{ btn }}
-        .pulse
-          img(src="~/assets/images/fl-wts.svg")
+    //- .floating-call-btn 
+    //-   a.fl-btn(href="https://wa.me/79188208097")
+    //-     .text(v-html="btn") {{ btn }}
+    //-     .pulse
+    //-       img(src="~/assets/images/fl-wts.svg")
 </template>
 <script>
 export default{

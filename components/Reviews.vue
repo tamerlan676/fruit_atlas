@@ -119,7 +119,7 @@ section.reviews
                 text-align: center;
                 margin: 0 auto;
                 color: #fff;
-                background: #8ed081;
+                background: linear-gradient(#D198E5, #C856F0);
                 display: flex;
                 align-items: center;
                 text-transform: uppercase;

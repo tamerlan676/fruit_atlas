@@ -74,6 +74,8 @@ export default{
         }
         .desc{
             margin-bottom: 16px;
+            line-height: 24px;
+
         }
         img{
             max-width: 100%;
