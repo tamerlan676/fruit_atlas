@@ -1,37 +1,33 @@
 <template lang="pug">
 .scheme
-    h2.section-title Честная схема работы
+    h2.section-title Как мы работаем
     .steps-wrapper
-        .step
-            .step-num 1 шаг
-            .title Вы присылаете список — мы сразу узнаем цену
-            .text Отправьте список нужных фруктов и овощей в удобном мессенджере. Мы моментально узнаём актуальные цены на рынке и сообщаем вам.
-        .step
-            .step-num 2 шаг
-            .title Согласовываем — и собираем заказ вручную
-            .text Если цена вас устраивает, наш человек на рынке начинает собирать ваш заказ — лично, отбирая каждый продукт.
-        .step
-            .step-num 3 шаг
-            .title Отправляем курьером день в день
-            .text После сборки находим курьера Яндекс Go, грузим и отправляем. Вы получаете товар на адрес в удобное для вас время.
-        .step
-            .step-num 4 шаг
-            .title Проверяете — и только потом оплачиваете
-            .text Вы осматриваете товар при получении. Если всё хорошо — оплачиваете. Если нет — мы решаем вопрос сразу. Всё по-честному.
-    .buttons
-        .button
-           a(href="https://wa.me/79188208097" target="_blank") Отправить список в WhatsApp
+        .step(v-for="step in steps")
+            .step-num {{ step.step }}
+            .title(v-html="step.title")
+            .text(v-html="step.desc")
+    a.btn(href="https://wa.me/79188208097")
+        span Отправить список
+        img(src="~/assets/images/wts-white.svg") 
 </template>
     
     <script>
     export default {
-      name: 'SchemeComp'
+      name: 'SchemeComp',
+      props: {
+      steps: {
+        type: Array
+      },
+  },
     }
     </script>
     
     <style lang="scss" scoped>
     .scheme{
-        padding: 40px 16px;
+        padding: 80px 16px 0;
+        @media(min-width: 992px){
+            padding: 120px 0 0;
+        }
         
     }
     .steps-wrapper{
@@ -41,45 +37,53 @@
             flex-wrap: wrap;
             justify-content: space-between;
             width: 650px;
-            margin: 0 auto 20px;
+            margin: 0 auto 40px;
         }
         @media(min-width: 1200px){
             display: grid; 
-            grid-template-columns: repeat(2, 2fr);
+            grid-template-columns: 1fr 1fr;
             grid-gap: 20px;
             width: 1120px;
-            margin: 0 auto 20px;
         }
         .step{
-        background: #EAEAEA;
-        display: flex;
-        flex-direction: column;
-        box-sizing: border-box;
-        padding: 20px 16px;
-        border-radius: 10px;
-        line-height: 20px;
-        color: #000;
-        margin-bottom: 8px;
-        @media(min-width: 768px){
-        }
-        @media(min-width: 1200px){
-            // width: 100%;
-        }
-        .step-num{
-            font-size: 24px;
-            font-weight: bold;
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+            box-shadow: 4px 4px 8px 0px rgba(214, 214, 214, 0.2);
+            border-radius: 10px;
+            padding: 32px 16px;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
             margin-bottom: 24px;
-            text-align: center;
-            font-family: "EuclidBold";
+            line-height: 24px;
+            color: #000;
+            position: relative;
+            @media(min-width: 768px){
+            
+            }
+            @media(min-width: 1200px){
+                margin-bottom: 0;
+                // width: 100%;
+            }
+        .step-num{
+            background: #7C4585;
+            position: absolute;
+            left: 16px;
+            top: -16px;
+            width: fit-content;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 20px;
+            margin-bottom: 16px;
             @media(min-width: 768px){
                 text-align: left;
             }
         }
         .title{
-            font-weight: 800;
             font-size: 20px;
-            margin-bottom: 8px;
-            font-family: "EuclidBold";
+            margin-bottom: 16px;
+            font-family: 'OpenSansBold';
         }
     }
     }
@@ -88,39 +92,26 @@
         padding: 24px 16px;
     }
     .scheme h2{
-        margin-bottom: 16px;
+        margin-bottom: 40px;
         text-align: center;
     }
 
-    .buttons{
-            @media(min-width: 768px){
-              display: flex;
-              width: fit-content;
-              margin: 0 auto;
+    .btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 40px;
+            border-radius: 15px;
+            height: 60px;
+            width: fit-content;
+            color: #fff;
+            margin: 0 auto;
+            background: #CC66DA;
+            @media(min-width: 992px){
+              justify-content: start;
             }
-            .button{
-              @media(min-width: 768px){
-                padding: 0 10px;
-              }
-            }
-            button, a{
-              display: flex;
-              background: #2DBE64;
-              color: #fff;
-              font-size: 14px;
-              width: 100%;
-              padding: 20px;
-              align-items: center;
-              justify-content: center;
-              border-radius: 10px;
-              text-transform: uppercase;
-              margin-bottom: 10px;
-              @media(min-width: 768px){
-                width: fit-content;
-                margin: 0 auto;
-              }
+            span{
+              margin-right: 8px;
             }
           }
-
-    
     </style>

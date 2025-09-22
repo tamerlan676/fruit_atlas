@@ -12,16 +12,16 @@
             .info
               .title {{ product.title.rendered }}
               .country {{ product.acf.country }}
-              .count {{ product.acf.quantity }}{{ product.acf.unit }}/{{ product.acf.price }}₽
+              .count {{ product.acf.quantity_count }}{{ product.acf.unit }}
               .calc
                 .calc-wrapper 
                   span(@click="minusOne(product)") -
                   input(:value="product.acf.quantity_count" disabled)
                   span(@click="plusOne(product)") +
-                .calc-price {{ product.acf.price_count }} ₽
+                //- .calc-price {{ product.acf.price_count }} ₽
       .total-price
-        .total Итоговая цена: 
-        .price {{ totalPrice }} ₽
+        //- .total Итоговая цена: 
+        //- .price {{ totalPrice }} ₽
       //- .promocode-zone(v-if="!promocodeActivated")
       //-   input(type="text" v-model="promocode" placeholder="Введите промокод")
       //-   button(type="button" @click="usePromocode") Применить
@@ -29,7 +29,7 @@
       //- .errorMessage(v-if="promocodeError") Недействительный промокод
       .btn(@click="$emit('turnCart')")
         nuxt-link.create-order(to="/order") Оформить заказ
-      .message Вы пока ни за что не платите. Мы перезвоним и согласуем стоимость и время доставки.
+      .message После оформления наш менеджер предоставит точную стоимость вашего заказа
     .empty-cart(v-if="cart.length < 1") В вашей корзине пока ничего нет
     </template>
     

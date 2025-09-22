@@ -1,6 +1,7 @@
 <template lang="pug">
 .hits
   h2 {{ title }}
+  .desc Добавьте товары в корзину, оформите заказ, и наш менеджер оператино с вами свяжется
   .hits-wrapper
       .product(v-for="(item, key) in hits" :key="key")
           nuxt-link.img-block(:to="`/categories/${category}/${item.id}`")
@@ -14,16 +15,13 @@
               .left
                   h3 {{ item.title.rendered }}
               .right
-                  .price {{ item.acf.price }} руб
-                      span / {{ item.acf.quantity }}{{ item.acf.unit }}. 
+                  .price
+                      span {{ item.acf.quantity }}{{ item.acf.unit }}. 
                       br
-                      span.price-info Цена может меняться в зависимости от объема
+                      span.price-info Актуальную цену предоставит менеджер
               .add-cart(@click="addToCart(item)"  :class="{'added-to-cart': cart.find(i => i.id == item.id)}") 
                 span(v-if="cart.find(i => i.id == item.id)") добавлено
                 span(v-else) в корзину
-  .buttons
-    .button
-      a(:href="link") Смотреть все
 </template>
 <script>
     export default{
@@ -61,7 +59,16 @@
       }
       h2{
         text-align: center;
+        margin-bottom: 16px;
+      }
+      .desc{
+        text-align: center;
         margin-bottom: 24px;
+        font-size: 13px;
+        color: rgb(128, 128, 128);
+        @media(min-width: 992px){
+          margin-bottom: 40px;
+        }
       }
     }
     .hits-wrapper{

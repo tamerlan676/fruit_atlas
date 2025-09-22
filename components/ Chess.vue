@@ -33,7 +33,7 @@ export default{
     }
     h2{
         margin-bottom: 16px;
-        font-family: "EuclidBold";
+        font-family: "OpenSansBold";
         @media(min-width: 992px){
             text-align: center;
             font-size: 40px;
@@ -66,7 +66,7 @@ export default{
             }
         }
         h3{
-            font-family: "EuclidBold";
+            font-family: "OpenSansBold";
             margin-bottom: 16px;
             @media(min-width: 992px){
                 font-size: 32px;

@@ -9,13 +9,14 @@
             .num {{ cart.filter(i => i.id === item.id)[0].acf.quantity_count }}
             .plus(@click="plusOne(item)") +
         .info 
-            .left
-                h3 {{ item.title.rendered }}
-            .right
-                .price от {{ item.acf.price }} руб
-                    span / {{ item.acf.quantity }}{{ item.acf.unit }}
-                    span.price-info Цена может меняться в зависимости от объема
-            .add-cart(@click="addToCart(item)"  :class="{'added-to-cart': cart.find(i => i.id == item.id)}") 
+              .left
+                  h3 {{ item.title.rendered }}
+              .right
+                  .price
+                      span {{ item.acf.quantity }}{{ item.acf.unit }}. 
+                      br
+                      span.price-info Актуальную цену предоставит менеджер
+              .add-cart(@click="addToCart(item)"  :class="{'added-to-cart': cart.find(i => i.id == item.id)}") 
                 span(v-if="cart.find(i => i.id == item.id)") добавлено
                 span(v-else) в корзину
 </template>

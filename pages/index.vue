@@ -1,14 +1,11 @@
 <template lang="pug">
 .main 
-  HeroCenter(:title="heroTitle" :desc="heroDesc" :img="img" @showPopup="showPopup")
-  Scheme
+  Hero(:title="heroTitle" :desc="heroDesc" :img="img" :benefits="benefits")
   Categories
+  Hits(:hits="fruitsHits" category="fruits" title="Популярные фрукты" link="https://fruit-atlas.ru/categories/fruits")
+  Hits(:hits="vegetablesHits" category="vegetables" title="Популярные овощи" link="https://fruit-atlas.ru/categories/vegetables")
+  Manager(:title="managerTitle")
   Reviews
-  Hits(:hits="fruitsHits" category="fruits" title="Сезонные фрукты" link="https://fruit-atlas.ru/categories/fruits")
-  Hits(:hits="vegetablesHits" category="vegetables" title="Сезонные овощи" link="https://fruit-atlas.ru/categories/vegetables")
-  .divider
-  Chess(:title="chessTitle" :desc="chessDesc" :chessList="chessList")
-  .divider
   Banner(:title="bannerTitle" :desc="bannerDesc" :img="bannerImg")
   Numbers
   Questions
@@ -20,28 +17,34 @@
 export default{
   data() {
     return {
-      heroTitle: `Доставка фруктов и овощей по Москве`,
-      heroDesc: `Прямо с рынка к вам домой – без посредников и лишних накруток<br>Свяжитесь с нами и мы раскажем вам все подробности`,
+      heroTitle: `Доставка фруктов и овощей по Москве и МО`,
+      heroDesc: `Организуем для вам доставку самых свежих и&nbsp;вкусных фруктов и&nbsp;овощей`,
       chessTitle: 'Преимущества при работе с нами',
+      managerTitle: 'Напишите своему личному менеджеру на&nbsp;рынке',
       chessDesc: 'Мы стремимся работать так, чтобы к нам возвращались снова и снова',
-      chessList: [
-        {
-          title: 'Свежие продукты – отбор лучших товаров с рынка',
-          desc: 'Мы тщательно отбираем свежие фрукты и овощи у надежных поставщиков, чтобы убедиться, что каждая посылка, доставленная к вам, соответствует нашим высоким стандартам качества.',
-          img: require('~/assets/images/qual.jpg')
-        },
-        {
-          title: 'Удобная доставка – от рынка прямо к вам домой',
-          desc: 'Мы стараемся организовать  быструю и надежную доставку прямо к вашей двери. Независимо от вашего местоположения, вы можете быть уверены, что ваши продукты будут доставлены вовремя.',
-          img: require('~/assets/images/del.jpg')
-        },
-        {
-          title: 'Оптовые и розничные заказы – для семей и бизнеса',
-          desc: 'Мы предлагаем широкий выбор фруктов и овощей, чтобы удовлетворить любой вкус и предпочтение. От классических и сезонных продуктов до экзотических фруктов и овощей - у нас есть все, что вам нужно',
-          img: require('~/assets/images/assort.jpg')
-        },
-
-      ],
+      benefits: ['Контроль качества', 'Удобная доставка', 'Рыночные цены', 'Широкий ассортимент', 'Опт и розница'],
+      scheme: [
+            {
+              step: '1 шаг',
+              title: `Вы присылаете список, мы&nbsp;предоставляем цену`,
+              desc: `Отправьте список нужных фруктов и&nbsp;овощей. <br>Мы оперативно соберем актуальные цены на&nbsp;рынке и&nbsp;сообщим вам.`,
+            },
+            {
+              step: '2 шаг',
+              title: `Согласовываем цену и&nbsp;собираем заказ`,
+              desc: `Если цена вас устраивает, мы&nbsp;начинаем собирать ваш заказ, отбирая каждый продукт.`,
+            },
+            {
+              step: '3 шаг',
+              title: `Отправляем заказ курьером`,
+              desc: `Находим курьера Яндекс Go, грузим и&nbsp;отправляем. <br>Вы получаете товар на&nbsp;адрес в&nbsp;удобное для вас время.`,
+            },
+            {
+              step: '4 шаг',
+              title: `Проверяете и только потом оплачиваете`,
+              desc: `Вы осматриваете товар при получении. <br>Если всё хорошо оплачиваете, если нет,&nbsp;мы&nbsp;найдем честное решение.`,
+            },
+          ],
       bannerTitle: 'Свяжитесь с нами',
       bannerDesc: 'Свяжитесь с нами и мы расскажем, как вам оформить заказ и ответим на все ваши вопросы',
       bannerImg: require('~/assets/images/banner.png'),

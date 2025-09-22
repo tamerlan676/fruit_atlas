@@ -1,48 +1,33 @@
 <template lang="pug">
 .header
-  .burger(@click='$emit("turnMenu")' :class="{active: activeBurger}")
-    span
-  .navbar__brand(v-if="$route.path !== '/'")
-    nuxt-link(to="/")
+  .wrapper
+    .navbar__brand(v-if="$route.path !== '/'")
+      nuxt-link(to="/uslugi/dostavka-fruktov-s-fud-city/")
+        .name fruit-atlas
+    .navbar__brand(v-else)
       .name fruit-atlas
-  .navbar__brand(v-else)
-    .name fruit-atlas
-  .menu-lg
-    ul.parent-ul
-      li
-        nuxt-link(to="/") Главная
-      li
-        nuxt-link(to="/about/") О Компании
-      li.dropdown-item(@click="turnCatMenu()") Каталог
-        ul.child-ul(:class="{active: catDroodown}")
-          li
-            nuxt-link(to="/categories/fruits") Фрукты
-          li
-            nuxt-link(to="/categories/vegetables") Овощи
-          li
-            nuxt-link(to="/categories/green") Зелень
-          li
-            nuxt-link(to="/categories/berries") Ягоды
-      li.dropdown-item(@click="turnCatMenu()") Услуги
-        ul.child-ul(:class="{active: catDroodown}")
-          li
-            nuxt-link(to="/uslugi/dostavka-v-ofisi/") Доставка фруктов в офисы
-          li
-            nuxt-link(to="/uslugi/dostavka-fruktov-s-fud-city/") Доставка фруктов и овощей с Фуд Сити
-          li
-            nuxt-link(to="/uslugi/dostavka-fruktov-v-kafe/") Доставка фруктов в кафе и рестораны
-          li
-            nuxt-link(to="/uslugi/dostavka-fruktov-v-magazini/") Доставка фруктов и овощей в магазины
-      li
-        nuxt-link(to="/contacts/") Контакты
-  .mob-sm        
-    .phone
-      a(href="tel:79188208097")
-        span Позвонить нам
-        img(src="~/assets/images/white-phone.svg") 
-    .cart(@click='$emit("turnCart")')
-      img(width="30px" src="~/assets/images/cart.svg")
-      .count(v-if="cart.length > 0") {{ totalProducts }}
+    .burger(@click='$emit("turnMenu")' :class="{active: activeBurger}")
+      span
+    .menu-lg
+      ul.parent-ul
+        li
+          nuxt-link(to="/uslugi/dostavka-fruktov-s-fud-city/") Главная
+        li
+          nuxt-link(to="/about/") О Компании
+        li.dropdown-item(@click="turnCatMenu()") Услуги
+          ul.child-ul(:class="{active: catDroodown}")
+            li
+              nuxt-link(to="/uslugi/dostavka-v-ofisi/") Доставка фруктов в офисы
+            li
+              nuxt-link(to="/uslugi/dostavka-fruktov-s-fud-city/") Доставка фруктов и овощей с Фуд Сити
+            li
+              nuxt-link(to="/uslugi/dostavka-fruktov-v-kafe/") Доставка фруктов в кафе и рестораны
+            li
+              nuxt-link(to="/uslugi/dostavka-fruktov-v-magazini/") Доставка фруктов и овощей в магазины
+        li
+          nuxt-link(to="/delivery/") Доставка
+        li
+          nuxt-link(to="/contacts/") Контакты
 </template>
 
 <script>
@@ -82,24 +67,31 @@ export default {
 <style lang="scss" scoped>
 .header{
   width: 100%;
-  box-sizing: border-box;
   padding: 20px 16px;
   position: sticky;
   top: 0;
+  z-index: 20;
+  height: 70px;
+  background: #7C4585;
+  @media(min-width: 1200px){
+    height: 80px;
+  }
+}
+.wrapper{
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #fff;
-  border-bottom: 1px solid rgb(230, 230, 230);
-  z-index: 20;
   @media(min-width: 992px){
     padding: 20px 32px;
   }
   @media(min-width: 1200px){
-
+    width: 1120px;
+    margin: 0 auto;
+    padding: 0;
   }
   .name{
-    color: #666A86;
+    color: #fff;
     font-size: 24px;
   }
   .burger{
@@ -115,7 +107,7 @@ export default {
       position: absolute;
       width: 30px;
       height: 3px;
-      background: #666A86;
+      background: #fff;
       transition: all .5s ease;
     }
     &::after{
@@ -123,14 +115,14 @@ export default {
       position: absolute;
       width: 30px;
       height: 3px;
-      background: #666A86;
+      background: #fff;
       bottom: 0;
       transition: all .5s ease;
     }
     span{
       width: 25px;
       height: 3px;
-      background: #666A86;
+      background: #fff;
       position: absolute;
       top: 11px;
       transition: all .5s ease;
@@ -142,12 +134,12 @@ export default {
         &:before{
           transform: rotate(40deg);
           bottom: 10px;
-          background: rgb(124, 36, 36);
+          background:#fff;
         }
         &:after{
           transform: rotate(-40deg);
           top: 12px;
-          background: rgb(124, 36, 36);
+          background:#fff;
         }
     }
     }
@@ -164,7 +156,7 @@ export default {
       display: flex;
     }
     li {
-      color: #000;
+      color: #fff;
       display: block;
       position: relative;
       transition-duration: 0.5s;
@@ -174,7 +166,7 @@ export default {
       letter-spacing: .1rem;
       font-weight: bold;
       a {
-        color: #000;
+        color: #fff;
         text-transform: uppercase;
         font-size: 12px;
         letter-spacing: .1rem;
@@ -230,18 +222,8 @@ export default {
       }
       margin-right: 50px;
       a{
-        color: #FFF;
-        background: #CC66DA;
-        padding: 10px;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        span{
-          margin-right: 10px;
-        }
-        img{
-          width: 20px;
-        }
+        color: #2DBE64;
+        font-family: "EuclidMd";
       }
     }
     .cart{

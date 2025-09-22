@@ -5,8 +5,6 @@
         h1.title Заказывайте овощи с быстрой и удобной доставкой на дом 
     .category-flex
         ProductsWrapper(:products="vegetables" folder="categories" category="vegetables")
-    Chess(:title="chessTitle" :desc="chessDesc" :chessList="chessList")
-    .divider
     Banner(:title="bannerTitle" :desc="bannerDesc" :img="bannerImg")
     Numbers
     Popup(:showPopup="showPopup" @showPopup="showPopup")
@@ -17,34 +15,16 @@
     name: 'SlugCategory',
     data() {
       return {
-        bannerTitle: 'Свяжитесь с нами',
         razdel: {
             title: 'Каталог',
             link: '/katalog/'
           },
-        bannerDesc: 'Свяжитесь с нами и мы расскажем, как вам оформить заказ и ответим на все ваши вопросы',
+        bannerTitle: 'Не нашли что искали?',
+        bannerDesc: 'Свяжитесь с нами и мы предоставим ифнормацию о продукте, который вас интересует',
         bannerImg: require('~/assets/images/banner.png'),
         showPopup: false,
         chessTitle: 'Преимущества при работе с нами',
         chessDesc: 'Мы стремимся работать так, чтобы к нам возвращались снова и снова',
-        chessList: [
-          {
-            title: 'Безупречное качество',
-            desc: 'Мы тщательно отбираем свежие фрукты и овощи у надежных поставщиков, чтобы убедиться, что каждая посылка, доставленная к вам, соответствует нашим высоким стандартам качества.',
-            img: require('~/assets/images/qual.jpg')
-          },
-          {
-            title: 'Быстрая и удобная доставка',
-            desc: 'Мы стараемся организовать  быструю и надежную доставку прямо к вашей двери. Независимо от вашего местоположения, вы можете быть уверены, что ваши продукты будут доставлены вовремя.',
-            img: require('~/assets/images/del.jpg')
-          },
-          {
-            title: 'Широкий ассортимент',
-            desc: 'Мы предлагаем широкий выбор фруктов и овощей, чтобы удовлетворить любой вкус и предпочтение. От классических и сезонных продуктов до экзотических фруктов и овощей - у нас есть все, что вам нужно',
-            img: require('~/assets/images/assort.jpg')
-          },
-
-        ],
       }
     },
     async fetch ({ store }) {

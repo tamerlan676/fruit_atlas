@@ -28,7 +28,7 @@ export default{
                     desc: 'Обеспечиваем оптовыми поставками фруктов и овощей с начала 2024 года'
                 },
                 {
-                    number: '30',
+                    number: '30+',
                     desc: 'Семей, которые являются нашими постоянными клиентами'
                 },
             ]
@@ -39,15 +39,15 @@ export default{
 
 <style lang="scss" scoped>
 .numbers{
-    padding: 24px;
+    padding: 80px 16px;
     @media(min-width: 992px){
         padding: 120px 0;
     }
-    h2{
-        @media(min-width: 768px){
+
+    .section-title{
             text-align: center;
+            margin-bottom: 40px;
         }
-    }
     .desc{
         margin-bottom: 24px;
         @media(min-width: 768px){
@@ -70,9 +70,9 @@ export default{
             justify-content: space-between;
         }
         .number{
-            font-size: 54px;
-            font-family: "EuclidBold";
-            color: rgb(231, 174, 29);
+            font-size: 40px;
+            color: #CC66DA;
+            font-family: 'OpenSansBold';
             @media(min-width: 768px){
                 text-align: center;
             }

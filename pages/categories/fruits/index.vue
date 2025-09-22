@@ -5,8 +5,6 @@
         h1.title Заказывайте фрукты с быстрой и удобной доставкой на дом 
     .category-flex
         ProductsWrapper(:products="fruits" folder="categories" category="fruits")
-    Chess(:title="chessTitle" :desc="chessDesc" :chessList="chessList")
-    .divider
     Banner(:title="bannerTitle" :desc="bannerDesc" :img="bannerImg")
     Numbers
     Popup(:showPopup="showPopup" @showPopup="showPopup")
@@ -21,8 +19,8 @@
             title: 'Каталог',
             link: '/katalog/'
           },
-          bannerTitle: 'Свяжитесь с нами',
-          bannerDesc: 'Свяжитесь с нами и мы расскажем, как вам оформить заказ и ответим на все ваши вопросы',
+          bannerTitle: 'Не нашли что искали?',
+          bannerDesc: 'Свяжитесь с нами и мы предоставим ифнормацию о продукте, который вас интересует',
           bannerImg: require('~/assets/images/banner.png'),
           showPopup: false,
           chessTitle: 'Преимущества при работе с нами',

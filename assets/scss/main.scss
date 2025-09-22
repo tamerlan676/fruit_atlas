@@ -1,18 +1,26 @@
 
 @font-face {
-    font-family: "EuclidReg";
-    src: local("EuclidReg"),
-     url(~/assets/fonts/EuclidReg.ttf) format("truetype");
+    font-family: "OpenSansRegular";
+    src: local("OpenSansRegular"),
+     url(~/assets/fonts/OpenSans-Regular.ttf) format("truetype");
   }
+
   @font-face {
-    font-family: "EuclidMd";
-    src: local("EuclidMd"),
-        url(~/assets/fonts/EuclidMd.ttf) format("truetype")
+    font-family: "OpenSansMedium";
+    src: local("OpenSansMedium"),
+     url(~/assets/fonts/OpenSans-Medium.ttf) format("truetype");
   }
-@font-face {
-    font-family: "EuclidBold";
-    src: local("EuclidBold"),
-        url(~/assets/fonts/EuclidBold.ttf) format("truetype")
+
+  @font-face {
+    font-family: "OpenSansBold";
+    src: local("OpenSansBold"),
+     url(~/assets/fonts/OpenSans-Bold.ttf) format("truetype");
+  }
+
+  @font-face {
+    font-family: "OpenSansExtraBold";
+    src: local("OpenSansExtraBold"),
+     url(~/assets/fonts/OpenSans-ExtraBold.ttf) format("truetype");
   }
 
 *{
@@ -24,12 +32,13 @@
   }
 
   h1, h2, h3{
-    font-family: "EuclidBold";
+    font-family: "OpenSansBold";
   }
   
   body{
-    font-family: "EuclidReg";
+    font-family: "OpenSansRegular";
   }
+
   label{
     display: block;
   }
@@ -49,10 +58,9 @@
     margin-bottom: 16px;
     @media(min-width: 768px){
       font-size: 32px;
-      margin-bottom: 24px;
+      margin-bottom: 40px;
     }
     @media(min-width: 992px){
-      font-size: 40px;
     }
   }
 

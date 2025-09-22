@@ -3,9 +3,9 @@
     h2.section-title Самое важное
     .card-wrapper
         .card(v-for="card in importantList" :key="card")
+            img(:src="card.img")
             .title {{ card.title }}
-            .desc {{ card.desc }}
-            .green {{ card.green }}
+            .desc(v-html="card.desc") {{ card.desc }}
     a.btn(href="https://wa.me/79188208097")
         span Написать сборщику
         img(src="~/assets/images/wts-white.svg") 
@@ -24,9 +24,9 @@
     
     <style lang="scss" scoped>
     .important{
-        padding: 40px 16px;
+        padding: 80px 16px 0;
         @media(min-width: 1200px){
-            padding: 120px 0;
+            padding: 120px 0 0;
         }
         .section-title{
             text-align: center;
@@ -49,25 +49,30 @@
                 border-radius: 10px;
                 padding: 16px;
                 .title{
-                    font-size: 24px;
-                    font-family: "EuclidBold";
+                    font-size: 18px;
                     margin-bottom: 16px;
-                    color: #666666
+                    font-family: 'OpenSansBold';
+                }
+                img{
+                    width: 50px;
+                    height: 50px;
+                    margin-bottom: 8px;
                 }
                 .subtitle{
                     font-size: 18px;
-                    font-family: "EuclidBold";
                     margin-bottom: 16px;
                 }
                 .desc{
                     margin-bottom: 24px;
                     line-height: 24px;
                 }
+                .desc span{
+                        font-family: 'OpenSansBold';
+                        color: #12B762;
+                }
                 .green{
-                    color: #12B762;
-                    font-family: "EuclidBold";
                     font-size: 30px;
-
+                    
                 }
             }
         }
@@ -75,19 +80,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 10px 20px;
+            padding: 10px 40px;
             border-radius: 15px;
-            height: 50px;
+            height: 60px;
             width: fit-content;
             color: #fff;
-            margin: 0 auto 24px;
-            background: linear-gradient(#D198E5, #C856F0);
+            margin: 0 auto;
+            background: #CC66DA;
             @media(min-width: 992px){
               justify-content: start;
-              margin: 0 auto;
-            }
-            @media(min-width: 1200px){
-              margin-bottom: 40px;
             }
             span{
               margin-right: 8px;

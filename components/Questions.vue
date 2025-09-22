@@ -1,9 +1,9 @@
 <template lang="pug">
 .questions
     h2.section-title Ответы на часто задаваемые вопросы
-    .question-block(v-for="item in questions") 
+    .question-block(v-for="item in questions" ) 
         .question(@click=" item.open = !item.open") 
-            .text {{ item.question }}
+            .text(v-html="item.question")
             .plus(:class="{ rotate: item.open === true }")
         .answer(:class="{ open: item.open === true }") {{ item.answer }}
 </template>
@@ -14,39 +14,40 @@
         data() {
             return {
                 questions: [
+
                     {
-                        question: 'Как проходит доставка?',
-                        answer: 'Мы собираем заказы по вашему списку, тщательно отбираем самые качественные образцы. Собрав заказ мы находим курьера и отправляем его на ваш адрес',
+                        question: 'Если у меня заказ меньше чем на 15&nbsp;000&nbsp;руб ?',
+                        answer: 'Мы соберем для вас и его, но возьмем за свои услуги 1 500 руб помимо стоимости самого заказа',
                         open: false
                     },
                     {
-                        question: 'Откуда берутся ваши фрукты?',
-                        answer: 'Мы занимаемся розничной торговлей фруктов и овощей уже 8 лет. Работаем на прямую только с проверенными поставщиками, которые привозят лучшие фрукты со всего мира.',
+                        question: 'Вы работаете по безналичному расчету ?',
+                        answer: 'Да работаем. Но только если ваш заказ более 30 000 руб',
                         open: false
                     },
                     {
-                        question: 'Как быстро доставляются заказы?',
-                        answer: 'Весь процесс доставки вашего заказа обычно занимает 1,5 - 2 часа.',
-                        open: false
-                    },
-                    {
-                        question: 'Могу ли я заказать в офис?',
+                        question: 'Могу ли я заказать в офис ?',
                         answer: 'Да, вы можете заказать фрукты и овощи как домой, так и в офис или любое другое место. У нас есть предложения для оптовых и розничных клиентов',
                         open: false
                     },
                     {
-                        question: 'Как бывает упакован заказ?',
-                        answer: 'Мы упаковываем товар таким образом, чтобы он доехал до вас в целости и сохранности. Все что мы везем вас, мы достаем с холодильника, а не с прилавка',
+                        question: 'А есть ли у вас самовывоз ?',
+                        answer: 'Да, мы соберем заказ к вашему приезду и поможем загрузить',
                         open: false
                     },
                     {
-                        question: 'Могу ли я увидеть фото или видео своего заказа перед отправкой ?',
-                        answer: 'Мы можем прислать фото или видео вашего заказа, прежде чем он поедет к вам',
+                        question: 'Могу ли я увидеть фото заказа перед отправкой ?',
+                        answer: 'Да, мы можем делиться фотографиями того, что вы хотите',
                         open: false
                     },
                     {
-                        question: 'А что, если мне не понравится то, что приехало ?',
-                        answer: 'Если вы поймете, что продукты не соответсвует вашим ожиданям, мы вернем все до копейки.',
+                        question: 'А что, если мне попался испорченный товар ?',
+                        answer: 'Если вы покажете фото порченного товара мы вернем деньги за этот товар',
+                        open: false
+                    },
+                    {
+                        question: 'Вы собираете только оптовые заказы?',
+                        answer: 'Нет. Мы можем собрать и мелкую розницу. Но цена за розницу немного выше  оптовой',
                         open: false
                     },
                 ]
@@ -58,17 +59,20 @@
     
     <style lang="scss" scoped>
     .questions{
-       padding: 40px 24px;
+       padding: 80px 16px 0;
        @media(min-width: 1200px){
             width: 1120px;
             margin: 0 auto;
-            padding: 120px 0;
+            padding: 120px 0 0;
        }
+       .section-title{
+            text-align: center;
+            margin-bottom: 40px;
+        }
        .question-block{
-            border-bottom: 2px solid #9D9D9D;
+            border-bottom: 1px solid #e5e5e5;
             color: #000;
-            font-family: "EuclidBold";
-            color: #9D9D9D;
+            font-family: 'OpenSansBold';
             overflow: hidden;
             position: relative;
             .question{
@@ -78,7 +82,7 @@
                 cursor: pointer;
                 height: 80px;
                 .text{
-                    width: 300px;
+                    width: fit-content;
                 }
                 .plus{
                     width: 35px;
@@ -87,7 +91,6 @@
                     align-items: center;
                     justify-content: center;
                     font-size: 40px;
-                    font-family: "Light";
                     background: #e5e5e5;
                     border-radius: 100%;
                     background: url(../assets/images/plus.svg);
@@ -107,6 +110,7 @@
             &.open{
                 height: fit-content;
                 padding: 15px 0;
+                font-family: 'OpenSansRegular',
             }
        }
     }

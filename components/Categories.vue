@@ -43,7 +43,7 @@ export default {
 <style lang="scss">
 .categories{
   .categories-wrapper{
-    padding: 32px 24px;
+    padding: 80px 24px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -54,7 +54,7 @@ export default {
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-gap: 10px;
         margin: 0 auto;
-        padding: 32px 0;
+        padding: 120px 0 0;
       }
       @media(min-width: 1200px){
         width: 1120px;
@@ -82,7 +82,6 @@ export default {
       }
       .category-name{
         font-size: 14px;
-        font-family: "EuclidBold";
         color: #fff;
         @media(min-width: 992px){
           font-size: 18px;

@@ -2,13 +2,13 @@
 .banner 
     .banner-wrapper 
         .left 
-            h3 {{ title }}
-            p.desc {{ desc }}
+            h3(v-html="title")
+            p.desc(v-html="desc")
             .buttons 
                 .button 
-                    a.btn(href="https://wa.me/79188208097") Написать в уотсап
-                .button 
-                    button(@click="$nuxt.$emit('showPopup', true)") Заказать звонок
+                    a.btn(href="https://wa.me/79188208097")
+                        span Узнать цены 
+                        img(src="~/assets/images/wts-white.svg") 
         .right
             img(:src='img')
 </template>
@@ -26,13 +26,13 @@ export default{
 
 <style lang="scss" scoped>
 .banner{
-    padding: 0 24px;
+    padding: 80px 16px 0;
     @media(min-width: 992px){
-        padding: 80px 0;
+        padding: 80px 0 0;
     }
     .banner-wrapper{
         width: 100%;
-        background: #f1f1f1;
+        background: #FAEB92;
         overflow: hidden;
         border-radius: 10px;
         @media(min-width: 992px){
@@ -46,7 +46,7 @@ export default{
             border-radius: 30px;
             }
         .left{
-            padding: 24px;
+                padding: 24px;
                 @media(min-width: 1100px){
                     padding: 80px;
                 }
@@ -56,30 +56,31 @@ export default{
             }
             .desc{
                 margin-bottom: 16px;
+                line-height: 24px;
             }
             .buttons{
             @media(min-width: 768px){
               display: flex;
               width: fit-content;
             }
-            button, .btn{
-              display: flex;
-              background: linear-gradient(#D198E5, #C856F0);
-              color: #fff;
-              width: 100%;
-              padding: 20px;
-              align-items: center;
-              justify-content: center;
-              font-size: 16px;
-              cursor: pointer;
-              border-radius: 10px;
-              text-transform: uppercase;
-              margin-bottom: 10px;
-              @media(min-width: 768px){
-                width: 250px;
-                margin-right: 10px;
-              }
+            .btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 40px;
+            border-radius: 15px;
+            height: 60px;
+            width: fit-content;
+            color: #fff;
+            margin: 0 auto;
+            background: #CC66DA;
+            @media(min-width: 992px){
+              justify-content: start;
             }
+            span{
+              margin-right: 8px;
+            }
+          }
           }
         }
         .right{

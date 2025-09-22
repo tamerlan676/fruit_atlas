@@ -3,10 +3,10 @@
     .wrapper
         .left
             .avito 
-              a(href="#")
+              a(target="_blank" href="https://www.avito.ru/moskva/produkty_pitaniya/dostavka_ovoschey_i_fruktov_s_fud_siti_3382360582#open-reviews-list")
                 img(src="~/assets/images/avito.svg")
-            h1 {{ title }}
-            p.md {{ desc }}
+            h1(v-html="title") 
+            p.md(v-html="desc")
             a.btn(href="https://wa.me/79188208097")
               span Написать сборщику
               img(src="~/assets/images/wts-white.svg") 
@@ -15,7 +15,7 @@
                 img(src="~/assets/images/gr-done.svg")
                 .txt {{ benefit }}
         .right
-            img(src="~/assets/images/green-t.png")
+            img(src="~/assets/images/hero.webp")
     .arrow
         //- img(src="~/assets/images/arrow.svg")
     </template>
@@ -64,18 +64,18 @@
         .hero{
           z-index: 2;
           position: relative;
-          background: #770061;
+          background: #7C4585;
           @media(min-width: 992px){
           }
           .wrapper{
-              padding: 24px 24px 0;
+              padding: 60px 24px 0;
                @media(min-width: 992px){
                   display: grid;
                   grid-template-columns: 1fr 1fr;
                   margin: 0 auto;
                   padding: 80px 24px 0;
                 @media(min-width: 1200px){
-                  width: 1100px;
+                  width: 1120px;
                   margin: 0 auto;
                   padding: 120px 0 0;
                 }
@@ -84,14 +84,15 @@
               h1{
                 color: #fff;
                 font-size: 24px;
-                line-height: 30px;
+                line-height: 32px;
                 text-align: center;
                 margin-bottom: 24px;
+                white-space: pre-line;
                 @media(min-width: 992px){
                   font-size: 35px;
                   margin-bottom: 16px;
                   text-align: left;
-                  line-height: 40px;
+                  line-height: 50px;
                 }
               }
             img{
@@ -110,13 +111,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 10px 20px;
+            padding: 10px 40px;
             border-radius: 15px;
-            height: 50px;
+            height: 60px;
             width: fit-content;
             color: #fff;
             margin: 0 auto 24px;
-            background: linear-gradient(#D198E5, #C856F0);
+            background: #CC66DA;
             @media(min-width: 992px){
               justify-content: start;
               margin: 0 0 24px;
@@ -134,6 +135,7 @@
               position: relative;
               img{
                 max-width: 100%;
+                margin-bottom: -4px;
               }
               .heart{
                 position: absolute;
@@ -203,9 +205,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-bottom: 24px;
             @media(min-width: 992px){
               justify-content: start;
-              margin-bottom: 24px;
             }
             
             img{
@@ -229,6 +231,7 @@
             .benefit{
               display: flex;
               align-items: center;
+              font-size: 14px;
               color: #fff;
               img{
                 margin-right: 8px;

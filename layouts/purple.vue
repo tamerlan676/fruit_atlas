@@ -1,6 +1,6 @@
 <template lang="pug">
 .default
-    HeaderComponent(@turnMenu="turnMenu" :activeBurger="activeBurger" @turnCart="turnCart")
+    HeaderPurple(@turnMenu="turnMenu" :activeBurger="activeBurger" @turnCart="turnCart")
     //- .free-del Бесплатная доставка до 8 марта!
     .mob-menu(:class="{active: menuActive}")
         ul.parent-ul
@@ -11,10 +11,7 @@
                     li(v-for="subitem in item.subitems" @click="turnMenu")
                         nuxt-link(:to="subitem.link") {{ subitem.title }}
         .phone-sm
-          a(href="tel:79188208097")
-            span Позвонить нам
-            img(src="~/assets/images/white-phone.svg") 
-    CartPanel(:class="{active: cartActive}" @turnCart="turnCart")
+          a(href="tel:79188208097") +7 918-820-80-97 
     Nuxt
     Footer
     //- .floating-call-btn 
@@ -33,40 +30,36 @@ export default{
                 title: 'Главная',
                 link: '/',
               },
-              {
-                title: 'О Компании',
-                link: '/about'
-              },
-              {
-                title: 'Каталог',
-                link: '#',
-                sub: false,
-                subitems: [
-                {
-                title: 'Фрукты',
-                link: '/categories/fruits'
-              },
-              {
-                title: 'Экзотика',
-                link: '/categories/exotics'
-              },
-              {
-                title: 'Овощи',
-                link: '/categories/vegetables'
-              },
-              {
-                title: 'Ягоды',
-                link: '/categories/berries'
-              },
-              {
-                title: 'Зелень',
-                link: '/categories/green'
-              },
-              {
-                title: 'Фруктовые корзины',
-                link: '/categories/baskets'
-              },]
-              },
+              // {
+              //   title: 'Каталог',
+              //   link: '#',
+              //   sub: false,
+              //   subitems: [
+              //   {
+              //   title: 'Фрукты',
+              //   link: '/categories/fruits'
+              // },
+              // {
+              //   title: 'Экзотика',
+              //   link: '/categories/exotics'
+              // },
+              // {
+              //   title: 'Овощи',
+              //   link: '/categories/vegetables'
+              // },
+              // {
+              //   title: 'Ягоды',
+              //   link: '/categories/berries'
+              // },
+              // {
+              //   title: 'Зелень',
+              //   link: '/categories/green'
+              // },
+              // {
+              //   title: 'Фруктовые корзины',
+              //   link: '/categories/baskets'
+              // },]
+              // },
               {
                 title: 'Услуги',
                 link: '#',
@@ -89,6 +82,14 @@ export default{
                   link: '/uslugi/dostavka-fruktov-v-magazini/'
                   },
                 ]
+              },
+              {
+                title: 'О Компании',
+                link: '/about'
+              },
+              {
+                title: 'Доставка',
+                link: '/delivery'
               },
               {
                 title: 'Контакты',
@@ -143,7 +144,7 @@ export default{
           box-sizing: border-box;
           overflow-y: scroll;
           z-index: 20;
-          top: 75px;
+          top: 60px;
           background: #fff;
           box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
           padding-bottom: 20px;
@@ -185,21 +186,11 @@ export default{
           .phone-sm{
             padding: 16px;
             a{
-              color: #FFF;
+              font-size: 20px;
               font-family: "EuclidMd";
-              background: linear-gradient(#D198E5, #C856F0);
-              padding: 10px;
-              border-radius: 10px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              span{
-                margin-right: 10px;
-              }
-              img{
-                width: 20px;
-              }
-          }}
+              color: #2DBE64
+            }
+          }
           .child-ul{
             transition: all .5s ease;
             transform: translateY(-22px);

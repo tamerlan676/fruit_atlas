@@ -76,8 +76,8 @@ export default{
                 color: gray
             }
             .title{
-                font-family: "EuclidBold";
-                font-size: 24px;
+                font-family: "OpenSansBold";
+                font-size: 18px;
             }
 
         }
